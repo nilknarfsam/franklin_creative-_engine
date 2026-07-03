@@ -1,0 +1,28 @@
+id: album-04
+number: 4
+title: "O Trono Intocável"
+slug: o-trono-intocavel
+scripture_range: "Salmos 37-48"
+track_count: 12
+status: in_production
+vibe_core:
+  - trap-acustico
+  - pop-teatral
+  - cinematic-trap-rock
+  - arena-anthem
+language: pt-BR
+created: 2026-01-01
+updated: 2026-07-02
+tracks:
+  - track-01-o-legado
+  - track-02-o-peso-do-clamor
+  - track-03-o-sopro-do-tempo
+  - track-04-o-lago-horrivel-e-a-rocha
+  - track-05-o-calice-da-traicao
+  - track-06-a-sede-da-minha-alma
+  - track-07-luz-e-verdade
+  - track-08-o-clamor-da-historia
+  - track-09-o-cantico-do-casamento-real
+  - track-10-o-refugio-inabalavel
+  - track-11-o-aplauso-das-nacoes
+  - track-12-a-cidade-do-grande-rei

@@ -1,0 +1,16 @@
+id: track-03
+album_id: album-04
+number: 3
+title: "O Sopro do Tempo"
+slug: o-sopro-do-tempo
+scripture: "Salmo 39"
+scripture_ref: "Sl 39"
+duration_estimate: "4:00-4:35"
+vibe: "Rap Poético & Ambient Acústico"
+ministration: true
+ministration_notes: "Momento sussurrado e reflexivo sobre fragilidade humana"
+suno_prompt: "Ambient lofi trap, warm acoustic guitar, spoken-word poetry style, vulnerable melodic hook, soft vocal layers, emotional and atmospheric, Brazilian Portuguese vocals"
+status: needs_review
+vibecore_alerts:
+  - track-03-eclesiastes-vento
+updated: 2026-07-02

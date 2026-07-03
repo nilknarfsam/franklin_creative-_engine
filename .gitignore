@@ -1,0 +1,59 @@
+# Franklin Creative Engine — assets binários e ambiente
+
+# Audio
+*.wav
+*.mp3
+*.flac
+*.aac
+*.ogg
+*.m4a
+
+# Video
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Imagens pesadas / sources
+*.psd
+*.ai
+*.aep
+*.prproj
+
+# Filmora
+*.wfp
+*.filmora
+*.wve
+
+# Manter .gitkeep em pastas de assets vazias
+!**/.gitkeep
+
+# Ambiente e secrets
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+credentials.json
+secrets.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE (opcional)
+.idea/
+*.swp
+*~
+
+# Python (scripts auxiliares)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Backups locais
+*.bak
+*.tmp

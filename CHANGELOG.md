@@ -1,0 +1,133 @@
+# Changelog — Franklin Creative Engine
+
+Todas as mudanças relevantes do projeto FCE são documentadas neste arquivo.
+
+Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
+Versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/) para a **documentação e estrutura** do repositório (não confundir com versões de álbum ou faixa).
+
+---
+
+## [Unreleased]
+
+### Planejado
+- Regra Cursor `.cursor/rules/fce.mdc`
+- Campanhas por faixa em `campaigns/campaign-track-XX/`
+- Estudos bíblicos em `bible-studies/study-track-XX/`
+- Biblioteca Suno/Canva em `library/` (além de veo3)
+- Implementação scripts `scripts/video/generate_*.py` (Veo API)
+- Primeiras gerações Suno e assets de áudio/vídeo
+
+### Adicionado
+- **Módulo de automação de vídeo (preparação)** — sem chamada real à API
+  - `docs/API_VIDEO_AUTOMATION.md` — Gemini API vs Vertex AI, segurança, workflow manual/futuro
+  - `library/veo3/` — `prompt-rules.md`, `camera-moves.md`, `character-continuity.md`, `scene-archetypes.md`
+  - `templates/veo3-scene-template.md`, `veo3-video-plan-template.md`
+  - `scripts/video/README.md`, `scripts/video/.env.example`
+- **WORKFLOW.md § Workflow 9** — Geração de vídeo com Veo API
+- **AGENTS.md** — regras de segurança Veo (keys, .env, 9:16, 6 elementos, no text)
+- **`.gitignore`** — exceção `!.env.example` para templates de ambiente
+
+---
+
+## [0.2.0] — 2026-07-02
+
+### Adicionado
+- **Estrutura modular** `albums/album-04-o-trono-intocavel/` com `album.yaml`, `concept.md`, pastas `tracks/`, `campaigns/`, `bible-studies/`, `assets/`, `legal/`
+- **12 faixas** em `tracks/track-01` … `track-12`, cada uma com:
+  - `track.yaml`, `concept.md`, `lyrics.md`, `technical-sheet.md`
+  - `suno/prompt.txt`, `suno/iterations/notes.md`
+  - Stubs: `video/`, `design/`, `copy/`, `assets/`
+- **`legal/dossie-direitos-autorais.md`** — cópia do dossiê monolítico (original preservado na raiz)
+- **`legal/credits.md`** — créditos e registro Suno (template)
+- **`legal/vibecore-alerts.md`** — alerta Track 03 documentado
+- **Templates** em `templates/`:
+  - `track-template.md`, `campaign-template.md`, `bible-study-template.md`
+  - `suno-prompt-template.md`, `veo3-brief-template.md`, `canva-kit-brief.md`
+- **`.gitignore`** — política para áudio, vídeo, imagens pesadas, Filmora, ambiente
+- **`scripts/migrate_album_04.py`** — script de migração reutilizável
+
+### Alterado
+- Álbum 4 passa de dossiê monolítico para unidades modulares por faixa
+- Track 03 marcada como `needs_review` (VibeCore Alert — sem alteração de letra)
+
+### Notas
+- Dossiê original na raiz **não removido**: `DOSSIÊ DE DIREITOS AUTORAIS_ ÁLBUM 4 - O TRONO INTOCÁVEL.md`
+- Letras definitivas copiadas verbatim do dossiê (incluindo escapes markdown do source)
+- Fase 1 do ROADMAP concluída (estrutura + templates + gitignore)
+
+---
+
+## [0.1.0] — 2026-07-02
+
+### Adicionado
+- **README.md** — Ponto de entrada do Franklin Creative Engine (FCE): missão, stack criativa, tipos de entrega, início rápido para humanos e agentes de IA
+- **VISION.md** — Missão, visão 3–5 anos, identidade VibeCore, princípios teológicos e de produção, métricas de sucesso
+- **ROADMAP.md** — Fases 0–5 com marcos, entregas do Álbum 4, biblioteca criativa, automação e distribuição
+- **PROJECT_STRUCTURE.md** — Árvore de diretórios, convenções de nomenclatura, schemas `album.yaml` e `track.yaml`, política de assets
+- **AGENTS.md** — Regras operacionais para ChatGPT, Cursor/Codex e demais agentes; contexto do Álbum 4; checklists de qualidade
+- **WORKFLOW.md** — Oito pipelines: álbum, faixa, vídeo, design, copy, estudo bíblico, campanha e ministração
+- **CHANGELOG.md** — Este arquivo
+
+### Contexto
+- Projeto iniciado como SO criativo para campanhas completas de música cristã
+- Álbum de referência: **Álbum 4 — O Trono Intocável** (Salmos 37–48, 12 faixas)
+- Dossiê de direitos autorais existente na raiz (migração prevista Fase 1)
+- Pendência documentada: Track 03 (*O Sopro do Tempo*) — ajuste teológico na estrofe com referência a Eclesiastes
+
+### Stack documentada
+- ChatGPT, Cursor/Codex, Suno, Veo 3, Filmora Pro, Canva
+
+---
+
+## Histórico de versões — guia
+
+| Versão | Significado |
+|--------|-------------|
+| **MAJOR** | Reestruturação radical (ex.: novo schema YAML, breaking change de paths) |
+| **MINOR** | Novos módulos, templates, workflows ou fases concluídas do ROADMAP |
+| **PATCH** | Correções, clarificações, typos em documentação |
+
+---
+
+## Registro por álbum (separado)
+
+Versões de conteúdo musical não usam semver do repo. Registrar aqui como notas:
+
+### Álbum 4 — O Trono Intocável
+
+| Data | Evento |
+|------|--------|
+| — | Dossiê de direitos autorais com 12 faixas (letras definitivas + fichas técnicas) |
+| — | VibeCore Alert: Track 03 pendente micro-refatoração |
+| 2026-07-02 | Referenciado na fundação documental FCE v0.1.0 |
+| 2026-07-02 | Estrutura modular migrada — FCE v0.2.0 |
+
+---
+
+## Como contribuir com entradas
+
+Ao concluir trabalho significativo:
+
+```markdown
+## [X.Y.Z] — YYYY-MM-DD
+
+### Adicionado
+- ...
+
+### Alterado
+- ...
+
+### Corrigido
+- ...
+
+### Removido
+- ...
+```
+
+Mover itens de `[Unreleased]` para a nova versão datada.
+
+---
+
+[Unreleased]: https://github.com/franklin-creative-engine/fce/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/franklin-creative-engine/fce/releases/tag/v0.2.0
+[0.1.0]: https://github.com/franklin-creative-engine/fce/releases/tag/v0.1.0
