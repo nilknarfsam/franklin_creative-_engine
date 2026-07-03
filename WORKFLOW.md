@@ -167,17 +167,19 @@ theatrical mood, [cor dominante], slow camera push-in,
 
 **Objetivo:** Capas, carrosséis devocionais, stories, thumbnails.
 
+**Pré-requisito:** **Creative Direction Pipeline** G2 aprovado (`design/design-specification.md`).
+
 ### Fase A — Brief
 
 | Campo | Conteúdo |
 |-------|----------|
 | Faixa / álbum | Título + número |
 | Versículo anchor | Ex.: Sl 37:5 |
-| Mood visual | Dark / Epic / Festive |
-| Elementos | Trono, montanhas, etc. |
-| Formatos | 1080×1080, 1080×1920, 1280×720 |
+| Mood visual | Da design specification |
+| Elementos | Tokens, tipografia, grid da spec |
+| Formatos | Canvas definidos na spec |
 
-**Output:** `design/canva-brief.md`
+**Output:** `design/canva-brief.md` (operacional — deriva de `design-specification.md`)
 
 ### Fase B — Produção Canva
 
@@ -281,6 +283,72 @@ theatrical mood, [cor dominante], slow camera push-in,
 
 ---
 
+## Creative Direction Pipeline — Estratégia de campanha (obrigatório)
+
+**Objetivo:** Transformar uma música em **projeto criativo profissional** antes de qualquer asset visual ou vídeo. Não gera imagens nem vídeos.
+
+**Documentação:** [library/creative_direction_system/README.md](./library/creative_direction_system/README.md)
+
+```
+Música (letra + conceito) → Creative Brief → Design Specification → Creative Review → Execução
+                                                                              ↓
+                                    ┌─────────────────┬─────────────────┐
+                                    │ Narrative Engine │ Design (Canva)  │ Copy / Campanha │
+                                    └─────────────────┴─────────────────┘
+```
+
+### Fase CDS1 — Creative Brief
+
+| Etapa | Ação | Output | Módulo |
+|-------|------|--------|--------|
+| CDS1.1 | Ler `track.yaml`, `concept.md`, `lyrics.md` | Contexto | — |
+| CDS1.2 | Construir brief estratégico (14 seções) | `design/creative-brief.md` | `01_creative_brief.md` |
+| CDS1.3 | Revisar checklists Fase A | `design/creative-review.md` | `03_creative_review.md` |
+
+**Gate G1:** Brief aprovado (Direção + Teologia) antes da design spec.
+
+### Fase CDS2 — Design Specification
+
+| Etapa | Ação | Output | Módulo |
+|-------|------|--------|--------|
+| CDS2.1 | Derivar sistema visual do brief | `design/design-specification.md` | `02_design_specification.md` |
+| CDS2.2 | Documentar 14 elementos (canvas → responsividade) | Spec completa | |
+| CDS2.3 | Alinhar paleta/luz com vídeo (se aplicável) | Cross-ref Narrative Engine | |
+| CDS2.4 | Revisar checklists Fase B | `creative-review.md` | |
+
+**Gate G2:** Design spec aprovada antes de Canva ou Narrative Pipeline.
+
+### Fase CDS3 — Creative Review (contínuo)
+
+| Etapa | Ação | Output | Módulo |
+|-------|------|--------|--------|
+| CDS3.1 | Aplicar 6 checklists (qualidade, visual, branding, bíblico, emocional, marketing) | Review documentado | `03_creative_review.md` |
+| CDS3.2 | Resolver bloqueios e VibeCore Alerts | Flags zerados | |
+| CDS3.3 | Aprovar gates G3–G5 conforme entregáveis | Status em review | |
+
+**Gate G4:** Assets aprovados antes de publicação (Workflow 7).
+
+### Checklist Creative Direction Pipeline
+
+- [ ] `creative-brief.md` completo e aprovado (G1)
+- [ ] `design-specification.md` completo e aprovado (G2)
+- [ ] `creative-review.md` com checklists respondidos
+- [ ] Big idea refletida em spec visual
+- [ ] Nenhum VibeCore Alert aberto na aprovação final
+- [ ] `canva-brief.md` derivado da spec (não substitui spec)
+
+### Integração com outros workflows
+
+| Workflow | Relação com CDS |
+|----------|-----------------|
+| WF4 Design | Executa após G2 — `canva-brief.md` deriva da spec |
+| Narrative Pipeline | Executa após G1 — mood/paleta do brief alimenta cenas |
+| WF5 Copy | Tom e mensagem-chave vêm do brief |
+| WF7 Campanha | Entregáveis e cronograma vêm do brief |
+| WF9 Veo | Requer CDS G1 + Narrative Pipeline completo |
+
+---
+
 ## Narrative Pipeline — Direção cinematográfica (obrigatório)
 
 **Objetivo:** Pensar como diretor de cinema **antes** de qualquer prompt Veo. Não gera vídeo.
@@ -356,7 +424,7 @@ Hook → Character → Scene(s) → Emotion → Symbol → Cinematography → Pr
 
 **Objetivo:** Planejar, promptar e gerar cenas Veo (manual hoje; script futuro) com segurança e prioridade **9:16** para social.
 
-**Pré-requisito:** **Narrative Pipeline concluído** (prompts compostos + director commentary).
+**Pré-requisito:** **Creative Direction Pipeline G1** + **Narrative Pipeline concluído** (prompts compostos + director commentary).
 
 **Documentação principal:** [docs/API_VIDEO_AUTOMATION.md](./docs/API_VIDEO_AUTOMATION.md)
 
@@ -462,6 +530,9 @@ Hook → Character → Scene(s) → Emotion → Symbol → Cinematography → Pr
 | Letra nova | WF2 Fase A–B | 2–4 h |
 | Suno prompt | WF2 Fase C1–C2 | 30 min |
 | Reel de lançamento | WF3 + WF5 ou WF9 | 4–8 h |
+| Campanha completa | CDS + WF7 | 2–4 h |
+| CDS — brief estratégico | Creative Direction CDS1 | 1–2 h |
+| CDS — design spec | Creative Direction CDS2 | 1–2 h |
 | Veo — direção narrativa | Narrative Pipeline | 2–4 h |
 | Veo — plano + prompts | Narrative Pipeline N4 | 1–2 h |
 | Veo — geração manual | WF9 Fase C | 2–4 h |
@@ -478,12 +549,13 @@ Hook → Character → Scene(s) → Emotion → Symbol → Cinematography → Pr
 Antes de marcar faixa como `published`:
 
 1. **Teologia** — VibeCore Alerts zerados
-2. **Áudio** — Master sem clipping; dinâmica coerente com letra
-3. **Vídeo** — Cortes no beat; legendas corretas
-4. **Visual** — Brand do álbum consistente
-5. **Copy** — Versículos citados corretamente
-6. **Legal** — Entrada no dossiê de direitos autorais
-7. **CHANGELOG** — Versão registrada
+2. **CDS** — Brief e design spec aprovados
+3. **Áudio** — Master sem clipping; dinâmica coerente com letra
+4. **Vídeo** — Cortes no beat; legendas corretas
+5. **Visual** — Brand do álbum consistente
+6. **Copy** — Versículos citados corretamente
+7. **Legal** — Entrada no dossiê de direitos autorais
+8. **CHANGELOG** — Versão registrada
 
 ---
 
@@ -493,4 +565,4 @@ Novos workflows (podcast, live worship, merch) serão adicionados como seções 
 
 Alterações de pipeline → atualizar CHANGELOG.md + notificar em AGENTS.md se regras mudarem.
 
-**Versão:** 0.3.0 — 2026-07-02 (Narrative Engine Sprint 4)
+**Versão:** 0.4.0 — 2026-07-02 (Creative Direction System Sprint 5)

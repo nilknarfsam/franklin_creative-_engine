@@ -124,7 +124,10 @@ track-01-o-legado/
 │   └── filmora/
 │       └── edit-notes.md   # Notas de montagem
 ├── design/
-│   └── canva-brief.md      # Brief para carrosséis e capa
+│   ├── creative-brief.md           # CDS 01 — brief estratégico
+│   ├── design-specification.md     # CDS 02 — sistema visual
+│   ├── creative-review.md          # CDS 03 — aprovações
+│   └── canva-brief.md              # Brief operacional Canva (derivado)
 ├── copy/
 │   ├── captions.md         # Legendas por plataforma
 │   └── posts.md            # Copy de posts
@@ -252,6 +255,22 @@ Arquivos `.md` com placeholders `{{VAR}}` ou seções `[PREENCHER]`.
 
 ---
 
+## Módulo: Creative Direction System (`library/creative_direction_system/`)
+
+**Framework permanente de direção criativa estratégica.** Não gera imagens nem vídeos — define como uma campanha deve ser pensada antes da execução.
+
+| Arquivo | Função |
+|---------|--------|
+| `01_creative_brief.md` | Brief estratégico de nível agência |
+| `02_design_specification.md` | Brief → especificações visuais sistemáticas |
+| `03_creative_review.md` | Aprovação, checklists e gates de qualidade |
+
+**Regra FCE:** CDS aprovado (G1–G2) **antes** de design executável (Canva) e **antes** do Narrative Pipeline (vídeo).
+
+**Output por faixa:** `tracks/.../design/creative-brief.md`, `design-specification.md`, `creative-review.md`
+
+---
+
 ## Módulo: Biblioteca (`library/`)
 
 Conteúdo **curado e versionado**, não rascunhos de projeto.
@@ -279,6 +298,11 @@ library/
 │   ├── 06_cinematography_library.md
 │   ├── 07_prompt_composer.md
 │   └── 08_director_commentary.md
+├── creative_direction_system/ # Framework de direção criativa (OBRIGATÓRIO antes de campanha)
+│   ├── README.md
+│   ├── 01_creative_brief.md
+│   ├── 02_design_specification.md
+│   └── 03_creative_review.md
 ├── canva/
 │   └── album-04-brand.md
 ├── copy/
@@ -381,5 +405,6 @@ Módulos candidatos: `podcasts/`, `merch/`, `live-performance/`, `translations/`
 - [ ] `lyrics.md` com tags Suno completas
 - [ ] `technical-sheet.md` com vibe, tempo, ministração
 - [ ] `suno/prompt.txt` exportado
+- [ ] CDS: `design/creative-brief.md` + `design-specification.md` + `creative-review.md`
 - [ ] Links para campanha e estudo bíblico
 - [ ] Entrada no CHANGELOG se alteração estrutural

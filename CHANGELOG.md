@@ -17,6 +17,24 @@ Versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/) para a
 - Implementação scripts `scripts/video/generate_*.py` (Veo API)
 - Primeiras gerações Suno e assets de áudio/vídeo
 - Retrofit Narrative Engine para tracks 02–12
+- Retrofit CDS para tracks existentes com campanha planejada
+
+### Adicionado — Sprint 5: Creative Direction System
+- **Creative Direction System (CDS)** — framework permanente em `library/creative_direction_system/`:
+  - `README.md` — propósito, arquitetura e conexões (Narrative, Prompt, Design, Veo)
+  - `01_creative_brief.md` — brief estratégico de nível agência + template
+  - `02_design_specification.md` — 14 elementos de sistema visual + template
+  - `03_creative_review.md` — gates G1–G5 e 6 checklists de aprovação
+- **WORKFLOW.md § Creative Direction Pipeline** — obrigatório antes de design e campanha
+- **PROJECT_STRUCTURE.md** — módulo `creative_direction_system/` + paths `design/creative-brief.md`, etc.
+- **AGENTS.md v0.4.0** — CDS obrigatório para campanha/design; ordem de leitura atualizada
+- **README.md** — estado Sprint 5
+
+### Alterado — Sprint 5
+- **Workflow 4 (Design)** — pré-requisito CDS G2; `canva-brief.md` derivado da design spec
+- **Workflow 9 (Veo)** — pré-requisito CDS G1 além do Narrative Pipeline
+- **Checklist nova faixa** — inclui documentos CDS em `design/`
+- **Controle de qualidade** — CDS como gate antes de publicação
 
 ### Adicionado
 - **Track 01 — Retrofit Narrative Engine** (`tracks/track-01-o-legado/video/narrative/`):

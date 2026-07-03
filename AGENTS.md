@@ -24,9 +24,10 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 1. **AGENTS.md** (este arquivo)
 2. **PROJECT_STRUCTURE.md** — paths e schemas
 3. **WORKFLOW.md** — pipeline da tarefa solicitada
-4. **`library/narrative_engine/`** — se a tarefa envolver **qualquer vídeo**
-5. **album.yaml** / **track.yaml** do contexto específico
-6. **legal/dossie-direitos-autorais.md** se trabalhar com letras existentes
+4. **`library/creative_direction_system/`** — se a tarefa envolver **campanha, design ou direção criativa**
+5. **`library/narrative_engine/`** — se a tarefa envolver **qualquer vídeo**
+6. **album.yaml** / **track.yaml** do contexto específico
+7. **legal/dossie-direitos-autorais.md** se trabalhar com letras existentes
 
 ---
 
@@ -42,6 +43,8 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 - Registre mudanças significativas em CHANGELOG.md quando solicitado
 - Preserve fidelidade bíblica — adaptação poética, não distorção
 - Indique `status` em YAML ao criar ou atualizar metadados
+- **Campanha/design:** executar Creative Direction Pipeline antes de Canva ou assets visuais
+- Produzir `creative-brief.md`, `design-specification.md` e `creative-review.md` para campanhas completas
 - **Vídeo:** executar Narrative Pipeline completo antes de qualquer prompt Veo
 - Compor prompts Veo **somente** via `library/narrative_engine/07_prompt_composer.md`
 - Produzir `director-commentary.md` para todo vídeo
@@ -61,6 +64,7 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 - Entregar prompt de cena sem os 6 elementos (personagem, ambiente, emoção, câmera, iluminação, objetivo dramático)
 - **Escrever prompts Veo manualmente** — sempre usar Prompt Composer
 - **Pular Narrative Engine** e ir direto ao Veo ou `veo3-prompts.md`
+- **Pular CDS** e ir direto ao Canva sem brief/spec aprovados
 - Publicar vídeo sem `video/narrative/director-commentary.md`
 - Reorganizar pastas sem atualizar PROJECT_STRUCTURE.md
 - Substituir teologia bíblica por paráfrases de outros livros (ex.: Eclesiastes no Salmo 39)
@@ -172,9 +176,13 @@ Se o usuário colar uma API key no chat: **não** repetir, **não** commitar —
 
 ### Canva
 
-**Input esperado:** `design/canva-brief.md`
+**Pré-requisito:** [Creative Direction Pipeline](./WORKFLOW.md) G2 — `design/design-specification.md` aprovada.
+
+**Input esperado:** `design/design-specification.md` → `design/canva-brief.md`
 
 **Entregáveis:** capa de faixa, carrossel devocional, story, thumbnail YouTube
+
+**Library:** `library/creative_direction_system/` (estratégia) + `library/canva/` (brand de álbum)
 
 ---
 
@@ -197,10 +205,11 @@ Se o usuário colar uma API key no chat: **não** repetir, **não** commitar —
 
 ### Gerar campanha de lançamento
 
-1. Ler `track.yaml` + `concept.md`
-2. Seguir WORKFLOW.md § Campanha
-3. Output em `campaigns/campaign-track-XX/`
-4. Incluir calendário mínimo 7 dias (teaser → launch → devocional)
+1. Ler `track.yaml` + `concept.md` + `lyrics.md`
+2. Executar CDS: `creative-brief.md` → `design-specification.md` → `creative-review.md`
+3. Seguir WORKFLOW.md § Creative Direction Pipeline + § Campanha
+4. Output em `campaigns/campaign-track-XX/`
+5. Incluir calendário mínimo 7 dias (teaser → launch → devocional)
 
 ### Gerar estudo bíblico
 
@@ -267,6 +276,9 @@ updated: 2026-07-02
 - [ ] Suno prompt completo
 
 ### Campanha
+- [ ] Creative Brief aprovado (G1)
+- [ ] Design Specification aprovada (G2)
+- [ ] Creative Review com checklists completos
 - [ ] Hooks alinhados ao refrão
 - [ ] CTAs cristãos autênticos (sem manipulação)
 - [ ] Formato por plataforma
@@ -299,6 +311,7 @@ updated: 2026-07-02
 | **VibeCore Alert** | Pendência teológica ou de fidelidade bíblica |
 | **Ficha técnica** | Metadados de produção (vibe, tempo, prompt) |
 | **Campanha** | Conjunto de assets + calendário para uma faixa |
+| **CDS** | Creative Direction System — brief, spec e review estratégicos |
 | **Ministração** | Momento falado/oração dentro da faixa |
 
 ---
@@ -318,4 +331,4 @@ Quando humano pedir commit:
 
 Novas regras para módulos (podcast, merch, etc.) devem ser adicionadas como seções aqui e referenciadas em PROJECT_STRUCTURE.md.
 
-**Versão AGENTS.md:** 0.3.0 — Narrative Engine Sprint 4
+**Versão AGENTS.md:** 0.4.0 — Creative Direction System Sprint 5

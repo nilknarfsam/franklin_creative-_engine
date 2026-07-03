@@ -28,6 +28,8 @@ O Franklin Creative Engine não é apenas um repositório de letras. É uma **in
 | [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) | Estrutura de pastas, módulos e convenções de nomenclatura |
 | [AGENTS.md](./AGENTS.md) | Instruções para agentes de IA operarem no projeto |
 | [WORKFLOW.md](./WORKFLOW.md) | Pipelines de produção ponta a ponta |
+| [library/creative_direction_system/](./library/creative_direction_system/) | Direção criativa estratégica (CDS) |
+| [library/narrative_engine/](./library/narrative_engine/) | Direção cinematográfica (vídeo) |
 | [CHANGELOG.md](./CHANGELOG.md) | Histórico de versões e mudanças documentais |
 
 ---
@@ -78,7 +80,7 @@ Idioma padrão de conteúdo: Português Brasileiro.
 Estilo musical padrão: Pop Teatral / Trap Crossover / Arena Rock (ver VISION.md).
 ```
 
-**Ordem de leitura recomendada:** `AGENTS.md` → `PROJECT_STRUCTURE.md` → `WORKFLOW.md` → contexto específico do álbum/faixa em `albums/`.
+**Ordem de leitura recomendada:** `AGENTS.md` → `PROJECT_STRUCTURE.md` → `WORKFLOW.md` → `library/creative_direction_system/` (campanha/design) → `library/narrative_engine/` (vídeo) → contexto do álbum/faixa em `albums/`.
 
 ---
 
@@ -92,6 +94,7 @@ Estilo musical padrão: Pop Teatral / Trap Crossover / Arena Rock (ver VISION.md
 | Templates de faixa e campanha | ✅ Em `templates/` |
 | Automações Cursor | 🔜 Fase 3 do ROADMAP |
 | Narrative Engine | ✅ Sprint 4 — `library/narrative_engine/` |
+| Creative Direction System | ✅ Sprint 5 — `library/creative_direction_system/` |
 
 ---
 
