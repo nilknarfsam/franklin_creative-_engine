@@ -19,6 +19,12 @@ Versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/) para a
 - Retrofit Narrative Engine para tracks 02–12
 - Retrofit CDS para tracks existentes com campanha planejada
 
+### Adicionado — Sprint 5.1: Track Identity (O Legado)
+- **Track 01 — Identidade visual permanente** (`tracks/track-01-o-legado/identity/`):
+  - `track_identity.md` — Creative DNA, Design/Photography/Color/Typography Language, Visual Symbols, Do Not Use, Moodboard Description, Brand Alignment
+- **Track 01** — `README.md` da faixa como entrada e índice
+- **Track 01** — `concept.md` e `design/canva-brief.md` linkam para identity
+
 ### Adicionado — Sprint 5: Creative Direction System
 - **Creative Direction System (CDS)** — framework permanente em `library/creative_direction_system/`:
   - `README.md` — propósito, arquitetura e conexões (Narrative, Prompt, Design, Veo)

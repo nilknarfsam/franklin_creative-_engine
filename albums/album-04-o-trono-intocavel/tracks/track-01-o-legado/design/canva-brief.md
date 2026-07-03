@@ -11,5 +11,6 @@
 
 ## Elementos visuais
 
-- Versículo anchor: Salmo 37
+- Versículo anchor: Salmo 37:5
 - Vibe: Trap Acústico & Pop Teatral
+- **Identidade visual:** [identity/track_identity.md](../identity/track_identity.md) — tokens, tipografia, símbolos e regras por formato

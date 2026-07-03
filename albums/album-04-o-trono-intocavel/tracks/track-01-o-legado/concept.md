@@ -10,6 +10,8 @@ Uma "Super Edição" focando na confiança inabalável em Deus contra a ansiedad
 
 ## Links
 
+- [README da faixa](./README.md) — entrada e índice
+- [Identidade visual](./identity/track_identity.md) — linguagem visual permanente (Sprint 5.1)
 - [Letra definitiva](./lyrics.md)
 - [Ficha técnica](./technical-sheet.md)
 - [Suno prompt](./suno/prompt.txt)
