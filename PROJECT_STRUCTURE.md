@@ -42,11 +42,48 @@ franklin_creative_engine/
 │       ├── assets/              # Binários (gitignored parcialmente)
 │       └── legal/               # Dossiês e direitos autorais
 │
+├── architecture/                # Documentação arquitetural FCE 2.0 (meta-camada)
+│   ├── ARCHITECTURE.md          # Visão geral e cadeia declarativa
+│   ├── PRINCIPLES.md            # 14 princípios fundamentais
+│   ├── REGISTRY.md              # Índice declarativo da plataforma (conceito)
+│   ├── CONTEXT_PACKS.md         # Leitura mínima por tarefa (conceito)
+│   ├── DEPENDENCIES.md          # Grafo de dependências e leitura mínima
+│   ├── MODULES.md               # Conceito de módulo e fronteiras
+│   ├── PROFILES.md              # Sistema de perfis (planejado)
+│   ├── KNOWLEDGE.md             # Knowledge base (planejada)
+│   ├── SPECS.md                 # Padrão de specs por tarefa (planejado)
+│   └── MIGRATION.md             # Plano de migração incremental por sprints
+│
 ├── templates/                   # Modelos reutilizáveis
 ├── library/                     # Biblioteca criativa (prompts, estilos)
 ├── scripts/                     # Automações (futuro)
 └── docs/                        # Documentação expandida (futuro)
 ```
+
+---
+
+## Módulo: Arquitetura FCE 2.0 (`architecture/`)
+
+**Documentação arquitetural** — meta-camada que define a evolução do FCE para arquitetura modular declarativa. **Não substitui** `FCE.md`, `AGENTS.md` ou `WORKFLOW.md` na operação diária.
+
+**Cadeia declarativa alvo:** Princípios → Registry → Context Packs → Router → Launchers → Modules → Knowledge → Templates → Output
+
+| Arquivo | Função |
+|---------|--------|
+| `ARCHITECTURE.md` | Visão geral — cadeia declarativa e componentes |
+| `PRINCIPLES.md` | 14 princípios fundamentais (P1–P14) |
+| `REGISTRY.md` | Conceito de Registry — índice declarativo (`fce/` Sprint 2+) |
+| `CONTEXT_PACKS.md` | Conceito de Context Packs — leitura mínima por tarefa |
+| `DEPENDENCIES.md` | Fluxo e grafo de dependências entre camadas |
+| `MODULES.md` | Diferença entre launcher, module/library, knowledge, template e spec |
+| `PROFILES.md` | Sistema de perfis `profiles/franklin/*` (planejado — Sprint 2+) |
+| `KNOWLEDGE.md` | Knowledge base `knowledge/*` (planejada — Sprint 2+) |
+| `SPECS.md` | Padrão de specs `specs/*` (planejado — Sprint 3+) |
+| `MIGRATION.md` | Plano de migração incremental (10 mudanças por sprint) |
+
+**Regra:** Sprints 1–1.5 são fundacionais — paths futuros (`fce/`, `profiles/`, `knowledge/`, `specs/`) documentados em `architecture/`, não criados fisicamente até Sprint 2+.
+
+**Leitura:** Agentes de engenharia consultam `architecture/PRINCIPLES.md` antes de mudanças estruturais. Produção criativa continua via `FCE.md` → `launcher/`.
 
 ---
 

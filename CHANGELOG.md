@@ -9,6 +9,31 @@ Versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/) para a
 
 ## [Unreleased]
 
+### Adicionado — FCE 2.0 Blueprint Mestre (Engenharia Orientada por Arquitetura)
+- **MASTER_BLUEPRINT.md** — especificação oficial da plataforma (estado final 100%, horizonte 10 anos)
+- **MASTER_MIGRATION_PLAN.md** — plano mestre de migração em 7 fases (F0–F7)
+- Substitui modelo de micro-sprints por fases com critérios de aceite, rollback e validação
+
+### Adicionado — FCE 2.0 Sprint 1.5: Consolidação Arquitetural
+- **architecture/PRINCIPLES.md** — 14 princípios fundamentais (P1–P14) com matriz princípio → documento
+- **architecture/REGISTRY.md** — conceito de Registry como índice declarativo (`fce/tasks`, `modules`, `gates`)
+- **architecture/CONTEXT_PACKS.md** — conceito de Context Packs para leitura mínima por tarefa
+- **architecture/ARCHITECTURE.md** — cadeia declarativa: Princípios → Registry → Context Packs → Router → Launchers → Modules → Knowledge → Templates → Output
+- **PROJECT_STRUCTURE.md** — novos documentos na árvore e seção `architecture/` atualizada
+- **Compatibilidade:** nenhum arquivo operacional alterado; `fce/`, profiles, knowledge e specs físicos permanecem Sprint 2
+
+### Adicionado — FCE 2.0 Sprint 1: Fundação Arquitetural
+- **architecture/** — meta-camada documentando migração para arquitetura modular:
+  - `ARCHITECTURE.md` — visão geral (Core, Router, Launchers, Modules, Knowledge, Profiles, Specs, Templates, Assets, Examples, History)
+  - `DEPENDENCIES.md` — modelo de dependências e leitura mínima
+  - `MODULES.md` — conceito de módulo e fronteiras entre componentes
+  - `PROFILES.md` — sistema planejado `profiles/franklin/*` (7 perfis)
+  - `KNOWLEDGE.md` — knowledge base planejada `knowledge/*` (7 domínios)
+  - `SPECS.md` — padrão futuro de specs (entrada, processo, saída, validação)
+  - `MIGRATION.md` — plano incremental por sprints de 10 mudanças
+- **PROJECT_STRUCTURE.md** — módulo `architecture/` na árvore e seção dedicada
+- **Compatibilidade:** `FCE.md`, letras, prompts, assets e estrutura `albums/` inalterados; profiles/knowledge/specs reais não criados nesta sprint
+
 ### Planejado
 - Regra Cursor `.cursor/rules/fce.mdc`
 - Campanhas por faixa em `campaigns/campaign-track-XX/`
