@@ -19,6 +19,27 @@ Versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/) para a
 - Retrofit Narrative Engine para tracks 02–12
 - Retrofit CDS para tracks 02–12
 
+### Adicionado — FCE Launcher (interface conversacional)
+- **FCE.md** — porta de entrada: menu 12 opções + regras universais
+- **launcher/** — 11 playbooks de tarefa:
+  - CREATE_INSTAGRAM_POST · CREATE_CAROUSEL · CREATE_HERO_ASSET
+  - CREATE_STORY · CREATE_REEL · CREATE_SHORTS · CREATE_VIDEO_VEO
+  - CREATE_CAPTION · CREATE_TRACK · CREATE_ALBUM · IMPROVE_SYSTEM
+- **README.md** — FCE.md como porta de entrada
+- **AGENTS.md v0.6.0** — ordem de leitura começa por FCE.md + launcher
+- **WORKFLOW.md v0.6.0** — Launcher como camada de uso conversacional
+- **PROJECT_STRUCTURE.md** — módulo `launcher/`
+
+### Adicionado — Sprint 5.2: Hero Asset Workflow
+- **Hero Asset Workflow** — etapa entre Design Specification e Produção dos Assets:
+  - Hero Asset → Hero Review → Hero Approved → Asset Derivation
+- **docs/PRODUCTION_PHILOSOPHY.md** — por que Hero primeiro, por que derivar, benefícios comprovados
+- **WORKFLOW.md v0.5.0** — § Hero Asset Workflow + CDS2.5 + WF4 atualizado
+- **AGENTS.md v0.5.0** — regras Hero, Hero Review Checklist (8 critérios)
+- **PROJECT_STRUCTURE.md** — `assets/hero/`, `assets/hero/approved/`, `assets/exports/`
+- **README.md** — seção Production Philosophy
+- **Track 01** — Hero Asset APPROVED ✅ · `assets/hero/` documentado
+
 ### Adicionado — Track 01 CDS + assets P0 (produção Canva)
 - **Track 01 — Creative Direction System aplicado** (`design/`):
   - `creative-brief.md` — brief estratégico 14 seções (Gate G1 approved)

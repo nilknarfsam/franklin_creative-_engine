@@ -3,7 +3,7 @@
 **Álbum:** [O Trono Intocável](../../concept.md)  
 **Referência:** Salmo 37 (Sl 37)  
 **Vibe:** Trap Acústico & Pop Teatral  
-**Status:** `lyrics_final` · Narrative Engine ✅ · Identity ✅ · **CDS G1+G2 ✅**
+**Status:** `lyrics_final` · Narrative Engine ✅ · Identity ✅ · **CDS G1+G2 ✅** · **Hero Asset APPROVED ✅**
 
 ---
 
@@ -51,6 +51,23 @@ Aplica-se a: carrosséis, posts, stories, reels, shorts, thumbnails, Spotify Can
 
 ---
 
+## Hero Asset (Sprint 5.2)
+
+**Status:** APPROVED ✅ — 2026-07-02
+
+Primeira peça visual da campanha. Toda derivação (post, carrossel, story, thumbnail) parte deste frame.
+
+| Recurso | Path |
+|---------|------|
+| **Hero Asset** | [assets/hero/](./assets/hero/) |
+| Hero aprovado (binário) | [assets/hero/approved/](./assets/hero/approved/) |
+| Exports derivados | [assets/exports/](./assets/exports/) |
+| Filosofia FCE | [docs/PRODUCTION_PHILOSOPHY.md](../../../../docs/PRODUCTION_PHILOSOPHY.md) |
+
+**Hero aprovado:** Ato III — amanhecer urbano · calçada arborizada · símbolos `dawn` + `path` + `light` · Narrative [cena 06](./video/narrative/scenes.md)
+
+---
+
 ## Design e campanha
 
 | Recurso | Path | Status |
@@ -60,6 +77,7 @@ Aplica-se a: carrosséis, posts, stories, reels, shorts, thumbnails, Spotify Can
 | **Design spec (CDS)** | [design/design-specification.md](./design/design-specification.md) | ✅ G2 approved |
 | **Creative review (CDS)** | [design/creative-review.md](./design/creative-review.md) | ✅ G1+G2 · G4 pending |
 | Canva brief | [design/canva-brief.md](./design/canva-brief.md) | 🔄 Pronto para execução |
+| **Pacote P0 produção** | [design/assets-p0-plan.md](./design/assets-p0-plan.md) | 🔄 Spec Canva |
 | Campanha | `../../campaigns/campaign-track-01/` | Pendente |
 | Estudo bíblico | `../../bible-studies/study-track-01-salmo-37/` | Pendente |
 

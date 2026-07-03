@@ -2,6 +2,8 @@
 
 **Sistema operacional criativo com IA para produção de campanhas completas de músicas cristãs.**
 
+> **Porta de entrada:** leia **[FCE.md](./FCE.md)** — interface conversacional oficial. Funciona em ChatGPT, Cursor, Codex, Claude ou Gemini.
+
 O FCE orquestra álbuns, faixas, conteúdo visual, vídeos, legendas, roteiros, estudos bíblicos e campanhas de divulgação — do conceito teológico ao asset publicado — usando um pipeline modular integrado a ChatGPT, Cursor/Codex, Suno, Veo 3, Filmora Pro e Canva.
 
 ---
@@ -23,11 +25,14 @@ O Franklin Creative Engine não é apenas um repositório de letras. É uma **in
 
 | Arquivo | Propósito |
 |---------|-----------|
+| **[FCE.md](./FCE.md)** | **Porta de entrada conversacional** — menu de tarefas + launchers |
+| [launcher/](./launcher/) | Playbooks por tarefa (post, carrossel, Hero, Veo, etc.) |
 | [VISION.md](./VISION.md) | Missão, princípios teológicos-artísticos e visão de longo prazo |
 | [ROADMAP.md](./ROADMAP.md) | Fases, entregas e cronograma evolutivo |
 | [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) | Estrutura de pastas, módulos e convenções de nomenclatura |
 | [AGENTS.md](./AGENTS.md) | Instruções para agentes de IA operarem no projeto |
 | [WORKFLOW.md](./WORKFLOW.md) | Pipelines de produção ponta a ponta |
+| [docs/PRODUCTION_PHILOSOPHY.md](./docs/PRODUCTION_PHILOSOPHY.md) | Filosofia Hero Asset → Asset Derivation |
 | [library/creative_direction_system/](./library/creative_direction_system/) | Direção criativa estratégica (CDS) |
 | [library/narrative_engine/](./library/narrative_engine/) | Direção cinematográfica (vídeo) |
 | [CHANGELOG.md](./CHANGELOG.md) | Histórico de versões e mudanças documentais |
@@ -62,10 +67,11 @@ O Franklin Creative Engine não é apenas um repositório de letras. É uma **in
 
 ## Início rápido para humanos
 
-1. Leia [VISION.md](./VISION.md) para entender o *porquê* do projeto
-2. Consulte [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) antes de criar arquivos
-3. Siga [WORKFLOW.md](./WORKFLOW.md) para o tipo de entrega desejada
-4. Registre mudanças em [CHANGELOG.md](./CHANGELOG.md)
+1. Abra **[FCE.md](./FCE.md)** e escolha o que produzir hoje
+2. Leia [VISION.md](./VISION.md) para entender o *porquê* do projeto
+3. Consulte [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) antes de criar arquivos
+4. Siga [WORKFLOW.md](./WORKFLOW.md) para o tipo de entrega desejada
+5. Registre mudanças em [CHANGELOG.md](./CHANGELOG.md)
 
 ---
 
@@ -73,14 +79,25 @@ O Franklin Creative Engine não é apenas um repositório de letras. É uma **in
 
 ```
 Contexto: Franklin Creative Engine (FCE) — SO criativo para música cristã.
-Leia AGENTS.md antes de qualquer ação.
+Leia FCE.md PRIMEIRO — porta de entrada conversacional.
+Depois AGENTS.md e o launcher/ da tarefa escolhida.
 Respeite PROJECT_STRUCTURE.md para paths e naming.
 Não invente faixas ou álbuns não documentados.
 Idioma padrão de conteúdo: Português Brasileiro.
 Estilo musical padrão: Pop Teatral / Trap Crossover / Arena Rock (ver VISION.md).
 ```
 
-**Ordem de leitura recomendada:** `AGENTS.md` → `PROJECT_STRUCTURE.md` → `WORKFLOW.md` → `library/creative_direction_system/` (campanha/design) → `library/narrative_engine/` (vídeo) → contexto do álbum/faixa em `albums/`.
+**Ordem de leitura recomendada:** `FCE.md` → launcher da tarefa → `AGENTS.md` → `PROJECT_STRUCTURE.md` → `WORKFLOW.md` → contexto álbum/faixa em `albums/`.
+
+---
+
+## Production Philosophy
+
+> **O FCE produz primeiro o Hero Asset. Após aprovação, toda a campanha deriva dele.**
+
+O Hero Asset é a primeira peça visual produzida de uma campanha — a fotografia ou frame que encapsula a identidade da faixa. Tipografia é aplicada **depois**, em Canva. Carrossel, story, thumbnail e post **derivam** do Hero aprovado — nunca são produzidos todos ao mesmo tempo.
+
+Documentação completa: [docs/PRODUCTION_PHILOSOPHY.md](./docs/PRODUCTION_PHILOSOPHY.md) · Workflow: [WORKFLOW.md § Hero Asset](./WORKFLOW.md#hero-asset-workflow)
 
 ---
 
@@ -95,6 +112,8 @@ Estilo musical padrão: Pop Teatral / Trap Crossover / Arena Rock (ver VISION.md
 | Automações Cursor | 🔜 Fase 3 do ROADMAP |
 | Narrative Engine | ✅ Sprint 4 — `library/narrative_engine/` |
 | Creative Direction System | ✅ Sprint 5 — `library/creative_direction_system/` |
+| Hero Asset Workflow | ✅ Sprint 5.2 — [PRODUCTION_PHILOSOPHY.md](./docs/PRODUCTION_PHILOSOPHY.md) |
+| FCE Launcher | ✅ Interface conversacional — [FCE.md](./FCE.md) + [launcher/](./launcher/) |
 
 ---
 

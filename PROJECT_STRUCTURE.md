@@ -14,8 +14,23 @@ franklin_creative_engine/
 ├── ROADMAP.md                   # Fases e marcos
 ├── PROJECT_STRUCTURE.md         # Este arquivo
 ├── AGENTS.md                    # Instruções para IAs
+├── FCE.md                       # Porta de entrada conversacional (Launcher)
 ├── WORKFLOW.md                  # Pipelines de produção
 ├── CHANGELOG.md                 # Histórico de versões
+│
+├── launcher/                    # Playbooks por tarefa (FCE Launcher)
+│   ├── README.md
+│   ├── CREATE_INSTAGRAM_POST.md
+│   ├── CREATE_CAROUSEL.md
+│   ├── CREATE_HERO_ASSET.md
+│   ├── CREATE_STORY.md
+│   ├── CREATE_REEL.md
+│   ├── CREATE_SHORTS.md
+│   ├── CREATE_VIDEO_VEO.md
+│   ├── CREATE_CAPTION.md
+│   ├── CREATE_TRACK.md
+│   ├── CREATE_ALBUM.md
+│   └── IMPROVE_SYSTEM.md
 │
 ├── albums/                      # Unidade principal: álbum
 │   └── album-XX-{slug}/
@@ -55,6 +70,32 @@ franklin_creative_engine/
 - **Documentação técnica:** Português Brasileiro
 - **Suno prompts:** Inglês (padrão Suno) + tag `Brazilian Portuguese vocals`
 - **Nomes de pasta:** inglês ou português sem acento — preferir inglês para compatibilidade
+
+---
+
+## Módulo: FCE Launcher (`launcher/`)
+
+**Interface conversacional oficial** — permite que qualquer IA entre no projeto via [FCE.md](../FCE.md) e conduza o usuário à tarefa correta.
+
+| Arquivo | Tarefa |
+|---------|--------|
+| [FCE.md](../FCE.md) | Porta de entrada — menu principal |
+| `launcher/README.md` | Índice dos playbooks |
+| `launcher/CREATE_INSTAGRAM_POST.md` | Post feed Instagram |
+| `launcher/CREATE_CAROUSEL.md` | Carrossel devocional |
+| `launcher/CREATE_HERO_ASSET.md` | Hero Asset |
+| `launcher/CREATE_STORY.md` | Story 9:16 |
+| `launcher/CREATE_REEL.md` | Reel |
+| `launcher/CREATE_SHORTS.md` | Shorts / TikTok |
+| `launcher/CREATE_VIDEO_VEO.md` | Prompts Veo |
+| `launcher/CREATE_CAPTION.md` | Legendas |
+| `launcher/CREATE_TRACK.md` | Nova faixa |
+| `launcher/CREATE_ALBUM.md` | Novo álbum |
+| `launcher/IMPROVE_SYSTEM.md` | Melhorar documentação FCE |
+
+**Regra:** Launcher orienta a conversa — não substitui AGENTS.md, WORKFLOW.md ou CDS/Narrative Engine.
+
+**Campanha completa (menu 9):** orquestra CDS + WORKFLOW § WF7 + launchers individuais — sem launcher único.
 
 ---
 
@@ -131,10 +172,41 @@ track-01-o-legado/
 ├── copy/
 │   ├── captions.md         # Legendas por plataforma
 │   └── posts.md            # Copy de posts
-└── assets/                 # Áudio, vídeo, imagens (ver gitignore)
+└── assets/                 # Binários (gitignored) — ver § Assets por faixa
+    ├── hero/               # Hero Asset — primeira peça da campanha
+    │   └── approved/       # Hero aprovado após Hero Review
+    ├── exports/            # PNG/PDF finais prontos para publicação
     ├── audio/
     ├── video/
     └── images/
+```
+
+### Assets por faixa — Hero Asset (Sprint 5.2)
+
+Estrutura obrigatória para campanhas visuais após CDS G2:
+
+```
+assets/
+├── hero/
+│   ├── README.md           # Definição, status, critérios do Hero desta faixa
+│   └── approved/           # Binário do Hero aprovado (gitignored)
+├── exports/                # Exports finais derivados do Hero
+│   └── README.md           # Inventário de arquivos exportados
+├── audio/
+├── video/
+└── images/
+```
+
+| Path | Finalidade |
+|------|------------|
+| `assets/hero/` | Documentação e workflow do Hero Asset — primeira peça produzida |
+| `assets/hero/approved/` | Armazenamento do frame/foto Hero **aprovado** após Hero Review |
+| `assets/exports/` | Exports finais (carrossel, story, thumb, post) prontos para publicação |
+
+**Regra:** Hero Review aprovado **antes** de derivar carrossel, story ou thumbnail. Ver [docs/PRODUCTION_PHILOSOPHY.md](../docs/PRODUCTION_PHILOSOPHY.md).
+
+**Piloto:** [track-01-o-legado/assets/hero/](../albums/album-04-o-trono-intocavel/tracks/track-01-o-legado/assets/hero/) — Hero APPROVED ✅
+
 ```
 
 ### `track.yaml` — schema
@@ -406,5 +478,7 @@ Módulos candidatos: `podcasts/`, `merch/`, `live-performance/`, `translations/`
 - [ ] `technical-sheet.md` com vibe, tempo, ministração
 - [ ] `suno/prompt.txt` exportado
 - [ ] CDS: `design/creative-brief.md` + `design-specification.md` + `creative-review.md`
+- [ ] Hero Asset produzido e aprovado (`assets/hero/approved/`)
+- [ ] Assets derivados exportados (`assets/exports/`)
 - [ ] Links para campanha e estudo bíblico
 - [ ] Entrada no CHANGELOG se alteração estrutural

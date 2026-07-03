@@ -2,6 +2,8 @@
 
 Pipelines de produção ponta a ponta. Cada workflow indica **ferramenta principal**, **input**, **output** e **path no repositório**.
 
+**Camada de uso conversacional:** [FCE.md](./FCE.md) + [launcher/](./launcher/) — menu de tarefas que aponta para estes workflows. Humanos e IAs devem começar por FCE.md quando a intenção for produzir um entregável específico.
+
 ---
 
 ## Mapa de workflows
@@ -167,7 +169,7 @@ theatrical mood, [cor dominante], slow camera push-in,
 
 **Objetivo:** Capas, carrosséis devocionais, stories, thumbnails.
 
-**Pré-requisito:** **Creative Direction Pipeline** G2 aprovado (`design/design-specification.md`).
+**Pré-requisito:** **Creative Direction Pipeline** G2 aprovado (`design/design-specification.md`) + **Hero Asset Approved**.
 
 ### Fase A — Brief
 
@@ -181,16 +183,28 @@ theatrical mood, [cor dominante], slow camera push-in,
 
 **Output:** `design/canva-brief.md` (operacional — deriva de `design-specification.md`)
 
-### Fase B — Produção Canva
+### Fase B — Hero Asset (obrigatório)
 
-| Asset | Slides / specs | Uso |
-|-------|----------------|-----|
-| Capa de faixa | 1 | Spotify, YouTube |
-| Carrossel devocional | 5–10 | Instagram |
-| Story teaser | 1–3 | IG/TikTok |
-| Thumbnail | 1 | YouTube |
+| Etapa | Ação | Output |
+|-------|------|--------|
+| B0 | Produzir **Hero Asset** — primeira peça, sem tipografia | `assets/hero/` |
+| B1 | Executar **Hero Review** (checklist AGENTS.md) | Aprovação documentada |
+| B2 | Salvar Hero aprovado | `assets/hero/approved/` |
+| B3 | **Asset Derivation** — derivar demais peças do Hero | Specs em `design/` |
+| B4 | Export final | `assets/exports/` |
 
-**Output:** Export PNG → `assets/images/` + link Canva no brief
+**Regra:** Nunca iniciar carrossel, story ou thumbnail antes de Hero Approved. Ver [§ Hero Asset Workflow](#hero-asset-workflow).
+
+### Fase C — Produção Canva (derivação)
+
+| Asset | Slides / specs | Uso | Deriva do Hero |
+|-------|----------------|-----|----------------|
+| Post principal | 1 | Feed IG | ✅ Crop + overlay |
+| Carrossel devocional | 5–10 | Instagram | ✅ Slide CTA + recortes |
+| Story teaser | 1–3 | IG/TikTok | ✅ Crop 9:16 |
+| Thumbnail | 1 | YouTube | ✅ Crop 16:9 |
+
+**Output:** Export PNG → `assets/exports/` + link Canva no brief
 
 ---
 
@@ -290,12 +304,14 @@ theatrical mood, [cor dominante], slow camera push-in,
 **Documentação:** [library/creative_direction_system/README.md](./library/creative_direction_system/README.md)
 
 ```
-Música (letra + conceito) → Creative Brief → Design Specification → Creative Review → Execução
-                                                                              ↓
+Música (letra + conceito) → Creative Brief → Design Specification → Hero Asset → Hero Review → Hero Approved → Asset Derivation → Execução
+                                                                                              ↓
                                     ┌─────────────────┬─────────────────┐
                                     │ Narrative Engine │ Design (Canva)  │ Copy / Campanha │
                                     └─────────────────┴─────────────────┘
 ```
+
+**Gate G2.5 (Hero):** Hero Asset aprovado antes de produção em lote de assets derivados.
 
 ### Fase CDS1 — Creative Brief
 
@@ -316,7 +332,21 @@ Música (letra + conceito) → Creative Brief → Design Specification → Creat
 | CDS2.3 | Alinhar paleta/luz com vídeo (se aplicável) | Cross-ref Narrative Engine | |
 | CDS2.4 | Revisar checklists Fase B | `creative-review.md` | |
 
-**Gate G2:** Design spec aprovada antes de Canva ou Narrative Pipeline.
+**Gate G2:** Design spec aprovada antes de Hero Asset ou Narrative Pipeline.
+
+### Fase CDS2.5 — Hero Asset (Sprint 5.2)
+
+| Etapa | Ação | Output |
+|-------|------|--------|
+| CDS2.5.1 | Produzir Hero Asset — **sem texto na imagem** | `assets/hero/` |
+| CDS2.5.2 | Hero Review — checklist AGENTS.md | Resultado em `assets/hero/README.md` |
+| CDS2.5.3 | Aprovar Hero | `assets/hero/approved/` |
+| CDS2.5.4 | Documentar peças derivadas | `design/*-production.md` |
+| CDS2.5.5 | Produzir assets derivados no Canva | `assets/exports/` |
+
+**Gate Hero Approved:** Obrigatório antes de carrossel, story, thumbnail em lote.
+
+Ver [§ Hero Asset Workflow](#hero-asset-workflow) e [docs/PRODUCTION_PHILOSOPHY.md](./docs/PRODUCTION_PHILOSOPHY.md).
 
 ### Fase CDS3 — Creative Review (contínuo)
 
@@ -332,6 +362,8 @@ Música (letra + conceito) → Creative Brief → Design Specification → Creat
 
 - [ ] `creative-brief.md` completo e aprovado (G1)
 - [ ] `design-specification.md` completo e aprovado (G2)
+- [ ] **Hero Asset aprovado** (`assets/hero/approved/`) — Gate Hero
+- [ ] Assets derivados documentados e exportados
 - [ ] `creative-review.md` com checklists respondidos
 - [ ] Big idea refletida em spec visual
 - [ ] Nenhum VibeCore Alert aberto na aprovação final
@@ -341,7 +373,7 @@ Música (letra + conceito) → Creative Brief → Design Specification → Creat
 
 | Workflow | Relação com CDS |
 |----------|-----------------|
-| WF4 Design | Executa após G2 — `canva-brief.md` deriva da spec |
+| WF4 Design | Executa após G2 + **Hero Approved** — derivação Canva |
 | Narrative Pipeline | Executa após G1 — mood/paleta do brief alimenta cenas |
 | WF5 Copy | Tom e mensagem-chave vêm do brief |
 | WF7 Campanha | Entregáveis e cronograma vêm do brief |
@@ -536,7 +568,10 @@ Hook → Character → Scene(s) → Emotion → Symbol → Cinematography → Pr
 | Veo — direção narrativa | Narrative Pipeline | 2–4 h |
 | Veo — plano + prompts | Narrative Pipeline N4 | 1–2 h |
 | Veo — geração manual | WF9 Fase C | 2–4 h |
-| Carrossel devocional | WF6 + WF4 | 2–3 h |
+| Carrossel devocional | WF6 + WF4 (após Hero) | 2–3 h |
+| Post Instagram | FCE Launcher § CREATE_INSTAGRAM_POST | 1–2 h |
+| Hero Asset | FCE Launcher § CREATE_HERO_ASSET | 1–3 h |
+| Prompts Veo | FCE Launcher § CREATE_VIDEO_VEO | 1–2 h |
 | Estudo para célula | WF6 | 1–2 h |
 | Campanha 7 dias | WF7 | 1 h (planejamento) |
 
@@ -550,7 +585,8 @@ Antes de marcar faixa como `published`:
 
 1. **Teologia** — VibeCore Alerts zerados
 2. **CDS** — Brief e design spec aprovados
-3. **Áudio** — Master sem clipping; dinâmica coerente com letra
+3. **Hero Asset** — Hero Review aprovado antes de publicação visual
+4. **Áudio** — Master sem clipping; dinâmica coerente com letra
 4. **Vídeo** — Cortes no beat; legendas corretas
 5. **Visual** — Brand do álbum consistente
 6. **Copy** — Versículos citados corretamente
@@ -565,4 +601,75 @@ Novos workflows (podcast, live worship, merch) serão adicionados como seções 
 
 Alterações de pipeline → atualizar CHANGELOG.md + notificar em AGENTS.md se regras mudarem.
 
-**Versão:** 0.4.0 — 2026-07-02 (Creative Direction System Sprint 5)
+---
+
+## Hero Asset Workflow
+
+**Objetivo:** Produzir a **primeira peça visual** da campanha, validá-la e **derivar** todo o restante — nunca produzir todas as peças simultaneamente.
+
+**Documentação:** [docs/PRODUCTION_PHILOSOPHY.md](./docs/PRODUCTION_PHILOSOPHY.md)  
+**Piloto:** Track 01 — [assets/hero/](./albums/album-04-o-trono-intocavel/tracks/track-01-o-legado/assets/hero/) — APPROVED ✅
+
+```
+Design Specification (G2)
+        ↓
+   Hero Asset          ← primeira peça produzida; SEM texto na imagem
+        ↓
+   Hero Review         ← checklist AGENTS.md (8 critérios)
+        ↓
+   Hero Approved       ← assets/hero/approved/
+        ↓
+   Asset Derivation    ← post, carrossel, story, thumbnail
+        ↓
+   Exports             ← assets/exports/
+```
+
+### O que é o Hero Asset
+
+- **Primeira peça** produzida da campanha visual
+- Encapsula a identidade da faixa no clímax visual (ato III na maioria das faixas VibeCore)
+- **Todo o restante deriva dele** — crops, overlays, recortes
+- **Nunca** conter tipografia durante geração da fotografia — texto aplicado depois no Canva
+- Deve possuir **espaço negativo** intencional para hierarquia tipográfica
+
+### Regras
+
+1. **Nunca criar todas as peças ao mesmo tempo** — Hero primeiro, derivação depois
+2. **Nunca iniciar carrossel** sem Hero Approved
+3. Hero alinha com **Track Identity** e Narrative cena de clímax (quando existir)
+4. Hero Review documentado em `assets/hero/README.md`
+5. Binário aprovado em `assets/hero/approved/` (gitignored)
+6. Exports finais em `assets/exports/`
+
+### Fases
+
+| Fase | Ação | Output | Gate |
+|------|------|--------|------|
+| H1 | Selecionar cena/símbolo da spec (ato III, `dawn`, etc.) | Brief visual | Pós-G2 |
+| H2 | Produzir frame/foto — **no text** | Rascunho Hero | — |
+| H3 | Hero Review — 8 critérios (AGENTS.md) | Pass/Fail por critério | Hero Review |
+| H4 | Aprovar e arquivar | `assets/hero/approved/` | **Hero Approved** |
+| H5 | Documentar derivação | `design/*-production.md` | — |
+| H6 | Produzir peças derivadas no Canva | `assets/exports/` | G4 |
+
+### Asset Derivation — peças típicas
+
+| Peça | Derivação do Hero |
+|------|-------------------|
+| Post feed 4:5 | Full-bleed + overlay tipográfico |
+| Carrossel CTA (slide final) | Mesma foto + botão |
+| Story 9:16 | Crop vertical central |
+| Thumbnail 16:9 | Crop — rosto/horizonte terço esquerdo |
+| Mapa visual / infográfico | Recorte estação clímax |
+
+### Checklist Hero Asset Workflow
+
+- [ ] Design Specification G2 aprovada
+- [ ] Hero produzido sem texto na imagem
+- [ ] Hero Review — 8 critérios validados
+- [ ] Hero arquivado em `assets/hero/approved/`
+- [ ] Specs de derivação em `design/`
+- [ ] Exports em `assets/exports/`
+- [ ] Nenhuma peça derivada produzida antes de Hero Approved
+
+**Versão:** 0.6.0 — 2026-07-02 (FCE Launcher)

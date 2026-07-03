@@ -1,6 +1,8 @@
 # Agentes de IA — Franklin Creative Engine
 
-Instruções operacionais para **ChatGPT, Cursor, Codex, Claude** e demais agentes que trabalham neste repositório.
+Instruções operacionais para **ChatGPT, Cursor, Codex, Claude, Gemini** e demais agentes que trabalham neste repositório.
+
+**Comece por [FCE.md](./FCE.md)** — porta de entrada conversacional. Apresente o menu ao usuário e abra o launcher correspondente em `launcher/`.
 
 Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteúdo.
 
@@ -21,13 +23,16 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 
 ## Ordem de leitura obrigatória
 
-1. **AGENTS.md** (este arquivo)
-2. **PROJECT_STRUCTURE.md** — paths e schemas
-3. **WORKFLOW.md** — pipeline da tarefa solicitada
-4. **`library/creative_direction_system/`** — se a tarefa envolver **campanha, design ou direção criativa**
-5. **`library/narrative_engine/`** — se a tarefa envolver **qualquer vídeo**
-6. **album.yaml** / **track.yaml** do contexto específico
-7. **legal/dossie-direitos-autorais.md** se trabalhar com letras existentes
+0. **[FCE.md](./FCE.md)** — porta de entrada; menu + launcher da tarefa
+1. **Launcher** — `launcher/CREATE_*.md` conforme tarefa escolhida
+2. **AGENTS.md** (este arquivo)
+3. **PROJECT_STRUCTURE.md** — paths e schemas
+4. **WORKFLOW.md** — pipeline da tarefa solicitada
+5. **docs/PRODUCTION_PHILOSOPHY.md** — se a tarefa envolver **produção visual ou campanha**
+6. **`library/creative_direction_system/`** — se a tarefa envolver **campanha, design ou direção criativa**
+7. **`library/narrative_engine/`** — se a tarefa envolver **qualquer vídeo**
+8. **album.yaml** / **track.yaml** do contexto específico
+9. **legal/dossie-direitos-autorais.md** se trabalhar com letras existentes
 
 ---
 
@@ -48,6 +53,9 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 - **Vídeo:** executar Narrative Pipeline completo antes de qualquer prompt Veo
 - Compor prompts Veo **somente** via `library/narrative_engine/07_prompt_composer.md`
 - Produzir `director-commentary.md` para todo vídeo
+- **Hero Asset:** produzir e aprovar Hero antes de derivar carrossel, story ou thumbnail
+- Aplicar **Hero Review Checklist** antes de marcar Hero como approved
+- **Launcher:** seguir playbook em `launcher/` após escolha do menu em FCE.md
 
 ### ❌ Nunca faça
 
@@ -65,6 +73,9 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 - **Escrever prompts Veo manualmente** — sempre usar Prompt Composer
 - **Pular Narrative Engine** e ir direto ao Veo ou `veo3-prompts.md`
 - **Pular CDS** e ir direto ao Canva sem brief/spec aprovados
+- **Iniciar carrossel** sem Hero Asset aprovado (`assets/hero/approved/`)
+- **Produzir todas as peças visuais simultaneamente** — Hero primeiro, derivação depois
+- **Gerar tipografia dentro da fotografia** — texto sempre aplicado depois no Canva
 - Publicar vídeo sem `video/narrative/director-commentary.md`
 - Reorganizar pastas sem atualizar PROJECT_STRUCTURE.md
 - Substituir teologia bíblica por paráfrases de outros livros (ex.: Eclesiastes no Salmo 39)
@@ -178,11 +189,54 @@ Se o usuário colar uma API key no chat: **não** repetir, **não** commitar —
 
 **Pré-requisito:** [Creative Direction Pipeline](./WORKFLOW.md) G2 — `design/design-specification.md` aprovada.
 
-**Input esperado:** `design/design-specification.md` → `design/canva-brief.md`
+**Input esperado:** `design/design-specification.md` → Hero Asset aprovado → `design/canva-brief.md`
 
-**Entregáveis:** capa de faixa, carrossel devocional, story, thumbnail YouTube
+**Entregáveis:** Hero Asset → post, carrossel devocional, story, thumbnail YouTube
 
 **Library:** `library/creative_direction_system/` (estratégia) + `library/canva/` (brand de álbum)
+
+**Filosofia:** [docs/PRODUCTION_PHILOSOPHY.md](./docs/PRODUCTION_PHILOSOPHY.md) — Hero primeiro, derivação depois
+
+---
+
+## Hero Asset — regras (Sprint 5.2)
+
+Aprendizados validados na produção Track 01 — *O Legado*.
+
+### Regras obrigatórias
+
+- **Nunca iniciar um carrossel** sem Hero aprovado
+- **Hero deve representar a identidade da Track** — tokens, símbolos, arco emocional da `track_identity.md`
+- **Hero deve possuir espaço negativo** para tipografia — mín. 35–40% frame respirável
+- **Hero nunca deve conter texto** durante a geração da fotografia (Veo, stock, IA)
+- **Tipografia sempre aplicada depois** — Display, Scripture e CTAs em Canva sobre overlay
+
+### Workflow
+
+```
+Design Specification (G2) → Hero Asset → Hero Review → Hero Approved → Asset Derivation
+```
+
+Paths: `assets/hero/` · `assets/hero/approved/` · `assets/exports/`
+
+Ver [WORKFLOW.md § Hero Asset Workflow](./WORKFLOW.md#hero-asset-workflow).
+
+### Hero Review Checklist
+
+Validar **antes** de arquivar em `assets/hero/approved/`:
+
+| # | Critério | Pergunta de validação |
+|---|----------|----------------------|
+| 1 | **Expressão** | Rosto/corpo transmite emoção da faixa sem stock smile ou caricatura? |
+| 2 | **Narrativa** | Frame comunica clímax do arco (ex.: frio→ouro) e símbolo dominante? |
+| 3 | **Iluminação** | Luz motivada, temperatura correta por ato, alinhada à design spec? |
+| 4 | **Composição** | Regra dos terços, leading lines, um foco dominante? |
+| 5 | **Espaço negativo** | Área livre para tipografia sem competir com rosto/hero? |
+| 6 | **Consistência Track Identity** | Tokens `legado-*` (ou equivalente), Do Not Use respeitado? |
+| 7 | **Realismo** | Documental autêntico — não HDR, não kitsch, não gospel stock? |
+| 8 | **Impacto** | Reconhecível como esta faixa em ≤ 3 segundos? |
+
+**Todos os 8 critérios** devem passar para status **Hero Approved**. Documentar resultado em `assets/hero/README.md`.
 
 ---
 
@@ -278,6 +332,7 @@ updated: 2026-07-02
 ### Campanha
 - [ ] Creative Brief aprovado (G1)
 - [ ] Design Specification aprovada (G2)
+- [ ] **Hero Asset aprovado** (Hero Review — 8 critérios)
 - [ ] Creative Review com checklists completos
 - [ ] Hooks alinhados ao refrão
 - [ ] CTAs cristãos autênticos (sem manipulação)
@@ -312,6 +367,9 @@ updated: 2026-07-02
 | **Ficha técnica** | Metadados de produção (vibe, tempo, prompt) |
 | **Campanha** | Conjunto de assets + calendário para uma faixa |
 | **CDS** | Creative Direction System — brief, spec e review estratégicos |
+| **Hero Asset** | Primeira peça visual da campanha; origem de derivação |
+| **FCE Launcher** | Interface conversacional — FCE.md + launcher/ |
+| **Asset Derivation** | Produção de post, carrossel, story e thumb a partir do Hero |
 | **Ministração** | Momento falado/oração dentro da faixa |
 
 ---
@@ -331,4 +389,4 @@ Quando humano pedir commit:
 
 Novas regras para módulos (podcast, merch, etc.) devem ser adicionadas como seções aqui e referenciadas em PROJECT_STRUCTURE.md.
 
-**Versão AGENTS.md:** 0.4.0 — Creative Direction System Sprint 5
+**Versão AGENTS.md:** 0.6.0 — FCE Launcher
