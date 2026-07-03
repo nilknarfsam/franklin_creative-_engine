@@ -281,9 +281,82 @@ theatrical mood, [cor dominante], slow camera push-in,
 
 ---
 
+## Narrative Pipeline — Direção cinematográfica (obrigatório)
+
+**Objetivo:** Pensar como diretor de cinema **antes** de qualquer prompt Veo. Não gera vídeo.
+
+**Documentação:** [library/narrative_engine/README.md](./library/narrative_engine/README.md)
+
+```
+Hook → Character → Scene(s) → Emotion → Symbol → Cinematography → Prompt Composer → Director Commentary
+                                                                              ↓
+                                                                    Workflow 9 (Veo)
+```
+
+### Fase N1 — Hook (3 segundos)
+
+| Etapa | Ação | Output | Módulo |
+|-------|------|--------|--------|
+| N1.1 | Analisar faixa, emoção, plataforma | Decisão de hook | `01_hook_engine.md` |
+| N1.2 | Documentar tipo + justificativa | `video/narrative/hook.md` | Template em hook_engine |
+
+**Gate:** Hook definido antes do personagem.
+
+### Fase N2 — Personagem
+
+| Etapa | Ação | Output | Módulo |
+|-------|------|--------|--------|
+| N2.1 | Construir pessoa (não só rosto) | Character sheet completo | `02_character_engine.md` |
+| N2.2 | Definir tratamento de câmera | Seção cinematografia do personagem | |
+
+**Output:** `video/narrative/character-{slug}.md`
+
+### Fase N3 — Cenas
+
+| Etapa | Ação | Output | Módulo |
+|-------|------|--------|--------|
+| N3.1 | Definir número de cenas e atos | Arco documentado | `03_scene_builder.md` |
+| N3.2 | Por cena: 17 campos obrigatórios | `video/narrative/scenes/scene-NN.md` | |
+| N3.3 | Atribuir emoção + símbolo + versículo | Cross-ref 04 + 05 | |
+
+**Gate:** Nenhum campo vazio antes do Composer.
+
+### Fase N4 — Composição e documentação
+
+| Etapa | Ação | Output | Módulo |
+|-------|------|--------|--------|
+| N4.1 | Aplicar Emotion + Cinematography | Blocos nas cenas | `04`, `06` |
+| N4.2 | **Compor** Prompt Final (nunca manual) | Campo em cada scene-NN.md | `07_prompt_composer.md` |
+| N4.3 | Consolidar prompts | `video/veo3-prompts.md` | |
+| N4.4 | Escrever comentário do diretor | `video/narrative/director-commentary.md` | `08_director_commentary.md` |
+| N4.5 | Validar | `library/veo3/prompt-rules.md` | |
+
+**Gate:** Director commentary completo antes de Workflow 9 Fase C (geração Veo).
+
+### Fase N5 — Storyboard e plano operacional
+
+| Etapa | Ação | Output |
+|-------|------|--------|
+| N5.1 | Traduzir cenas em timing | `video/storyboard.md` |
+| N5.2 | Plano de produção | `video/veo3-video-plan.md` |
+| N5.3 | Notas de montagem | `video/filmora/edit-notes.md` |
+
+### Checklist Narrative Pipeline
+
+- [ ] `hook.md` com tipo e justificativa
+- [ ] Character sheet completo (todos os campos)
+- [ ] Cada cena com 17 campos + versículo + símbolo
+- [ ] Prompts **compostos** via Prompt Composer
+- [ ] `director-commentary.md` por cena respondido
+- [ ] Nenhum texto no prompt Veo (legendas = Filmora)
+
+---
+
 ## Workflow 9 — Geração de vídeo com Veo API
 
 **Objetivo:** Planejar, promptar e gerar cenas Veo (manual hoje; script futuro) com segurança e prioridade **9:16** para social.
+
+**Pré-requisito:** **Narrative Pipeline concluído** (prompts compostos + director commentary).
 
 **Documentação principal:** [docs/API_VIDEO_AUTOMATION.md](./docs/API_VIDEO_AUTOMATION.md)
 
@@ -291,23 +364,21 @@ theatrical mood, [cor dominante], slow camera push-in,
 
 | Etapa | Ação | Output | Ferramenta |
 |-------|------|--------|------------|
-| A1 | Ler `track.yaml`, `concept.md`, `storyboard.md` | Contexto | Cursor / ChatGPT |
-| A2 | Copiar `templates/veo3-video-plan-template.md` | `video/veo3-video-plan.md` | Cursor |
-| A3 | Definir character sheet | Seção no plano | ChatGPT |
-| A4 | Mapear cenas × seções musicais | Tabela de cenas | ChatGPT |
-| A5 | Escolher archetypes | `library/veo3/scene-archetypes.md` | ChatGPT |
+| A0 | Verificar Narrative Pipeline completo | Checklist OK | Cursor |
+| A1 | Ler `track.yaml`, `concept.md`, `video/narrative/` | Contexto | Cursor / ChatGPT |
+| A2 | Confirmar `veo3-video-plan.md` e `storyboard.md` | Plano operacional | Cursor |
+| A3 | Revisar prompts em `veo3-prompts.md` (compostos) | Prompts validados | Cursor |
 
-**Gate:** Plano aprovado antes de escrever prompts.
+**Gate:** Narrative Pipeline + plano aprovado antes de gerar.
 
 ### Fase B — Prompts por cena
 
 | Etapa | Ação | Output | Ferramenta |
 |-------|------|--------|------------|
-| B1 | Por cena: copiar `templates/veo3-scene-template.md` | `video/scenes/scene-NN.md` | Cursor |
-| B2 | Preencher **6 elementos** (personagem, ambiente, emoção, câmera, iluminação, objetivo) | Prompt consolidado | ChatGPT |
-| B3 | Aplicar regras | `library/veo3/prompt-rules.md` | Cursor |
-| B4 | Validar continuidade | `library/veo3/character-continuity.md` | Cursor |
-| B5 | Confirmar `no text` + **9:16** | Checklist | Humano / Agente |
+| B1 | Ler prompts de `video/narrative/scenes/` ou `veo3-prompts.md` | **Não reescrever** | Cursor |
+| B2 | Validar regras Veo | `library/veo3/prompt-rules.md` | Cursor |
+| B3 | Validar continuidade | `library/veo3/character-continuity.md` | Cursor |
+| B4 | Confirmar `no text` + **9:16** | Checklist | Humano / Agente |
 
 **Regra FCE:** Prompts em inglês. Sem texto legível no vídeo (legendas ficam no Filmora).
 
@@ -391,7 +462,8 @@ theatrical mood, [cor dominante], slow camera push-in,
 | Letra nova | WF2 Fase A–B | 2–4 h |
 | Suno prompt | WF2 Fase C1–C2 | 30 min |
 | Reel de lançamento | WF3 + WF5 ou WF9 | 4–8 h |
-| Veo — plano + prompts | WF9 Fase A–B | 1–2 h |
+| Veo — direção narrativa | Narrative Pipeline | 2–4 h |
+| Veo — plano + prompts | Narrative Pipeline N4 | 1–2 h |
 | Veo — geração manual | WF9 Fase C | 2–4 h |
 | Carrossel devocional | WF6 + WF4 | 2–3 h |
 | Estudo para célula | WF6 | 1–2 h |
@@ -421,4 +493,4 @@ Novos workflows (podcast, live worship, merch) serão adicionados como seções 
 
 Alterações de pipeline → atualizar CHANGELOG.md + notificar em AGENTS.md se regras mudarem.
 
-**Versão:** 0.2.1 — 2026-07-02 (Workflow 9 Veo API)
+**Versão:** 0.3.0 — 2026-07-02 (Narrative Engine Sprint 4)

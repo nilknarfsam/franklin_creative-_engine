@@ -91,6 +91,7 @@ Estilo musical padrão: Pop Teatral / Trap Crossover / Arena Rock (ver VISION.md
 | Estrutura modular `albums/` | ✅ `albums/album-04-o-trono-intocavel/` |
 | Templates de faixa e campanha | ✅ Em `templates/` |
 | Automações Cursor | 🔜 Fase 3 do ROADMAP |
+| Narrative Engine | ✅ Sprint 4 — `library/narrative_engine/` |
 
 ---
 

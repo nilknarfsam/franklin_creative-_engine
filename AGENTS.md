@@ -24,8 +24,9 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 1. **AGENTS.md** (este arquivo)
 2. **PROJECT_STRUCTURE.md** — paths e schemas
 3. **WORKFLOW.md** — pipeline da tarefa solicitada
-4. **album.yaml** / **track.yaml** do contexto específico
-5. **legal/dossie-direitos-autorais.md** se trabalhar com letras existentes
+4. **`library/narrative_engine/`** — se a tarefa envolver **qualquer vídeo**
+5. **album.yaml** / **track.yaml** do contexto específico
+6. **legal/dossie-direitos-autorais.md** se trabalhar com letras existentes
 
 ---
 
@@ -41,6 +42,9 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 - Registre mudanças significativas em CHANGELOG.md quando solicitado
 - Preserve fidelidade bíblica — adaptação poética, não distorção
 - Indique `status` em YAML ao criar ou atualizar metadados
+- **Vídeo:** executar Narrative Pipeline completo antes de qualquer prompt Veo
+- Compor prompts Veo **somente** via `library/narrative_engine/07_prompt_composer.md`
+- Produzir `director-commentary.md` para todo vídeo
 
 ### ❌ Nunca faça
 
@@ -55,6 +59,9 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 - Gerar prompts Veo com texto legível no vídeo (salvo pedido explícito)
 - Planejar vídeo social em 16:9 quando o entregável primário é Reel/TikTok/Shorts
 - Entregar prompt de cena sem os 6 elementos (personagem, ambiente, emoção, câmera, iluminação, objetivo dramático)
+- **Escrever prompts Veo manualmente** — sempre usar Prompt Composer
+- **Pular Narrative Engine** e ir direto ao Veo ou `veo3-prompts.md`
+- Publicar vídeo sem `video/narrative/director-commentary.md`
 - Reorganizar pastas sem atualizar PROJECT_STRUCTURE.md
 - Substituir teologia bíblica por paráfrases de outros livros (ex.: Eclesiastes no Salmo 39)
 
@@ -126,7 +133,9 @@ Não invente faixas fora do Álbum 4 sem autorização.
 
 ### Veo 3 / Veo API
 
-**Input esperado:** `video/veo3-brief.md`, `video/veo3-video-plan.md`, `video/scenes/scene-NN.md`
+**Pré-requisito obrigatório:** [Narrative Pipeline](./WORKFLOW.md) + `library/narrative_engine/`
+
+**Input esperado:** `video/narrative/` (character, scenes, director-commentary) → `veo3-prompts.md` (composto)
 
 **Diretrizes FCE:**
 - Estética cinematográfica teatral
@@ -137,9 +146,9 @@ Não invente faixas fora do Álbum 4 sem autorização.
 - Cada cena deve declarar: **personagem, ambiente, emoção, câmera, iluminação, objetivo dramático**
 - Prompts em **inglês**; incluir `no text, no watermark` salvo solicitação explícita do humano
 
-**Library:** `library/veo3/` — regras, câmera, continuidade, archetypes  
+**Library:** `library/narrative_engine/` (direção) + `library/veo3/` (validação/execução)  
 **Doc API:** `docs/API_VIDEO_AUTOMATION.md`  
-**Workflow:** WORKFLOW.md § Workflow 9
+**Workflow:** WORKFLOW.md § Narrative Pipeline → § Workflow 9
 
 ### Segurança de vídeo (Veo API)
 
@@ -309,4 +318,4 @@ Quando humano pedir commit:
 
 Novas regras para módulos (podcast, merch, etc.) devem ser adicionadas como seções aqui e referenciadas em PROJECT_STRUCTURE.md.
 
-**Versão AGENTS.md:** 0.2.1 — módulo Veo API 2026-07-02
+**Versão AGENTS.md:** 0.3.0 — Narrative Engine Sprint 4

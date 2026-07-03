@@ -13,5 +13,7 @@ Uma "Super Edição" focando na confiança inabalável em Deus contra a ansiedad
 - [Letra definitiva](./lyrics.md)
 - [Ficha técnica](./technical-sheet.md)
 - [Suno prompt](./suno/prompt.txt)
+- [Plano de vídeo Veo](./video/veo3-video-plan.md) — curta 9:16 (Narrative Engine completo)
+- [Narrative Engine](./video/narrative/) — hook, personagem, cenas, prompts compostos
 - Campanha: `../../campaigns/campaign-track-01/` (pendente)
 - Estudo bíblico: `../../bible-studies/study-track-01-salmo-37/` (pendente)

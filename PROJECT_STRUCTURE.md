@@ -112,8 +112,15 @@ track-01-o-legado/
 │   ├── prompt.txt          # Prompt principal
 │   └── iterations/         # Variantes testadas (notas)
 ├── video/
-│   ├── veo3-brief.md       # Brief para cenas Veo 3
-│   ├── storyboard.md       # Sequência de cenas
+│   ├── veo3-brief.md
+│   ├── veo3-video-plan.md
+│   ├── veo3-prompts.md
+│   ├── storyboard.md
+│   ├── narrative/              # Narrative Engine (obrigatório antes de prompts Veo)
+│   │   ├── hook.md
+│   │   ├── character-{slug}.md
+│   │   ├── scenes/scene-{NN}.md
+│   │   └── director-commentary.md
 │   └── filmora/
 │       └── edit-notes.md   # Notas de montagem
 ├── design/
@@ -224,6 +231,27 @@ Arquivos `.md` com placeholders `{{VAR}}` ou seções `[PREENCHER]`.
 
 ---
 
+## Módulo: Narrative Engine (`library/narrative_engine/`)
+
+**Framework cinematográfico permanente.** Não gera vídeo — ensina agentes a pensar como diretor de cinema.
+
+| Arquivo | Função |
+|---------|--------|
+| `01_hook_engine.md` | Primeiros 3 segundos |
+| `02_character_engine.md` | Fichas de personagem |
+| `03_scene_builder.md` | Anatomia de cena + template |
+| `04_emotion_engine.md` | Emoção → câmera/luz/cor/ritmo |
+| `05_symbol_library.md` | Símbolos bíblicos |
+| `06_cinematography_library.md` | Plano, lente, luz, composição |
+| `07_prompt_composer.md` | Montagem do Prompt Final |
+| `08_director_commentary.md` | Documentação do porquê |
+
+**Regra FCE:** Todo vídeo passa pelo Narrative Pipeline (WORKFLOW.md) **antes** de `veo3-prompts.md` ou geração Veo.
+
+**Output por faixa:** `tracks/.../video/narrative/`
+
+---
+
 ## Módulo: Biblioteca (`library/`)
 
 Conteúdo **curado e versionado**, não rascunhos de projeto.
@@ -237,8 +265,20 @@ library/
 │   │   └── festive-trap-pop.md
 │   └── vocal-tags.md
 ├── veo3/
+│   ├── prompt-rules.md
 │   ├── camera-moves.md
-│   └── scene-archetypes-biblical.md
+│   ├── character-continuity.md
+│   └── scene-archetypes.md
+├── narrative_engine/          # Framework cinematográfico (OBRIGATÓRIO antes de Veo)
+│   ├── README.md
+│   ├── 01_hook_engine.md
+│   ├── 02_character_engine.md
+│   ├── 03_scene_builder.md
+│   ├── 04_emotion_engine.md
+│   ├── 05_symbol_library.md
+│   ├── 06_cinematography_library.md
+│   ├── 07_prompt_composer.md
+│   └── 08_director_commentary.md
 ├── canva/
 │   └── album-04-brand.md
 ├── copy/

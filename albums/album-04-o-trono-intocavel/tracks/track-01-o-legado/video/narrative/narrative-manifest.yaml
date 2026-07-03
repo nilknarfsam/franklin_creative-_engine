@@ -1,0 +1,153 @@
+# Narrative Manifest — O Legado
+
+```yaml
+manifest_version: "1.0"
+engine: narrative_engine
+composed_at: 2026-07-02
+updated: 2026-07-02
+
+track:
+  track_id: track-01
+  album_id: album-04
+  title: "O Legado"
+  slug: o-legado
+  scripture: "Salmo 37"
+  scripture_ref: "Sl 37"
+  vibe: "Trap Acústico & Pop Teatral"
+
+character:
+  character_id: char-rafael-legado
+  name: "Rafael Santos"
+  sheet: character.md
+
+hook:
+  type: conflict
+  file: hook.md
+  duration_seconds: 3
+  scripture_anchor: "Sl 37:1"
+
+scenes:
+  - scene_id: scene-01
+    title: "Pressão"
+    act: I
+    duration_target_seconds: 7
+    emotion_id: pain
+    symbol_id: path
+    scripture: "Sl 37:1"
+    musical_section: "Intro / início Verse 1"
+  - scene_id: scene-02
+    title: "Comparação"
+    act: I
+    duration_target_seconds: 8
+    emotion_id: pain
+    symbol_id: storm
+    scripture: "Sl 37:1-2"
+    musical_section: "Verse 1"
+  - scene_id: scene-03
+    title: "Fidelidade"
+    act: II
+    duration_target_seconds: 8
+    emotion_id: trust
+    symbol_id: seed
+    scripture: "Sl 37:3"
+    musical_section: "Verse 1 / Pre-Chorus"
+  - scene_id: scene-04
+    title: "Pausa"
+    act: II
+    duration_target_seconds: 8
+    emotion_id: silence
+    symbol_id: light
+    scripture: "Sl 37:7"
+    musical_section: "Bridge / ministração"
+  - scene_id: scene-05
+    title: "Transfiguração"
+    act: III
+    duration_target_seconds: 8
+    emotion_id: peace
+    symbol_id: light
+    scripture: "Sl 37:5, 7"
+    musical_section: "Pre-Chorus"
+  - scene_id: scene-06
+    title: "Esperança"
+    act: III
+    duration_target_seconds: 8
+    emotion_id: hope
+    symbol_id: path
+    scripture: "Sl 37:5"
+    musical_section: "Chorus (hook)"
+
+scriptures:
+  primary: "Sl 37:5"
+  secondary:
+    - "Sl 37:1"
+    - "Sl 37:2"
+    - "Sl 37:3"
+    - "Sl 37:7"
+
+symbols:
+  - id: path
+    scenes: [scene-01, scene-06]
+  - id: storm
+    scenes: [scene-02]
+  - id: seed
+    scenes: [scene-03]
+  - id: light
+    scenes: [scene-04, scene-05]
+
+emotions:
+  arc: "pain → pain → trust → silence → peace → hope"
+  primary_by_act:
+    I: pain
+    II: trust
+    III: hope
+
+cinematography:
+  aspect_ratio: "9:16"
+  palette_act_I: "cold blue-gray desaturated"
+  palette_act_II: "neutral overcast"
+  palette_act_III: "golden hour amber purple"
+  continuity_pairs:
+    - [scene-04, scene-05]
+
+target_platforms:
+  primary:
+    - instagram_reels
+    - tiktok
+    - youtube_shorts
+  secondary:
+    - youtube_16x9_reframe
+  deliverables:
+    - reel_9x16_45-60s
+    - teaser_15s
+    - srt_pt-BR
+
+files:
+  hook: hook.md
+  character: character.md
+  scenes: scenes.md
+  prompt_composition: prompt-composition.md
+  director_commentary: director-commentary.md
+  operational:
+    video_plan: ../veo3-video-plan.md
+    storyboard: ../storyboard.md
+    veo_prompts: ../veo3-prompts.md
+    filmora: ../filmora/edit-notes.md
+
+prompts:
+  composer: narrative_engine/07_prompt_composer.md
+  composed_in: prompt-composition.md
+  language: en
+  guardrails:
+    - no_text
+    - no_watermark
+    - 9:16_vertical
+    - not_kitsch_religious
+
+status:
+  narrative_pipeline: complete
+  director_commentary: complete
+  prompt_composition: complete
+  veo_generation: pending
+  filmora_edit: pending
+  audio_master: pending
+```

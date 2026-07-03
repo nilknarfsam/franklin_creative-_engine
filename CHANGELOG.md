@@ -16,8 +16,40 @@ Versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/) para a
 - Biblioteca Suno/Canva em `library/` (além de veo3)
 - Implementação scripts `scripts/video/generate_*.py` (Veo API)
 - Primeiras gerações Suno e assets de áudio/vídeo
+- Retrofit Narrative Engine para tracks 02–12
 
 ### Adicionado
+- **Track 01 — Retrofit Narrative Engine** (`tracks/track-01-o-legado/video/narrative/`):
+  - `hook.md` — hook tipo Conflito (Sl 37:1)
+  - `character.md` — Rafael Santos via Character Engine
+  - `scenes.md` — 6 cenas × 17 campos (Scene Builder)
+  - `prompt-composition.md` — prompts compostos com linhagem documentada
+  - `director-commentary.md` — comentário do diretor por cena
+  - `narrative-manifest.yaml` — manifest conectando track, cenas, símbolos, emoções
+
+### Alterado
+- **Track 01** — `veo3-video-plan.md`, `storyboard.md`, `veo3-prompts.md` apontam para `video/narrative/` como fonte principal
+
+### Adicionado — Sprint 4: Narrative Engine
+- **Narrative Engine** — framework cinematográfico permanente em `library/narrative_engine/`:
+  - `01_hook_engine.md` — psicologia dos 3 primeiros segundos
+  - `02_character_engine.md` — construção de personagem + template
+  - `03_scene_builder.md` — anatomia de cena (17 campos) + template
+  - `04_emotion_engine.md` — 10 emoções × 7 dimensões cinematográficas
+  - `05_symbol_library.md` — 12 símbolos bíblicos
+  - `06_cinematography_library.md` — plano, lente, luz, composição, ritmo
+  - `07_prompt_composer.md` — montagem obrigatória do Prompt Final
+  - `08_director_commentary.md` — documentação do porquê por vídeo/cena
+  - `README.md` — índice e pipeline do módulo
+- **WORKFLOW.md § Narrative Pipeline** — obrigatório antes do Workflow 9 (Veo)
+- **PROJECT_STRUCTURE.md** — módulo `narrative_engine/` + path `video/narrative/`
+- **AGENTS.md v0.3.0** — Narrative Engine obrigatório; proíbe prompts Veo manuais
+
+### Alterado — Sprint 4
+- **Workflow 9** — pré-requisito Narrative Pipeline; Fase B valida prompts compostos
+- **Ordem de leitura AGENTS** — `library/narrative_engine/` para tarefas de vídeo
+
+### Adicionado — Sprint 3 (vídeo API prep)
 - **Módulo de automação de vídeo (preparação)** — sem chamada real à API
   - `docs/API_VIDEO_AUTOMATION.md` — Gemini API vs Vertex AI, segurança, workflow manual/futuro
   - `library/veo3/` — `prompt-rules.md`, `camera-moves.md`, `character-continuity.md`, `scene-archetypes.md`
