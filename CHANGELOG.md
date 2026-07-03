@@ -19,6 +19,18 @@ Versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/) para a
 - Retrofit Narrative Engine para tracks 02–12
 - Retrofit CDS para tracks 02–12
 
+### Adicionado — Suno Music System (VibeShell consolidado)
+- **library/suno/** — método oficial de produção musical (base VibeShell V3.0):
+  - `README.md` · `vibeshell-method.md` (6 fases) · `suno-prompt-rules.md`
+  - `lyrics-structure.md` · `bypass-and-safety.md` · `mastering-landr.md`
+- **launcher/CREATE_SUNO_SONG.md** — fluxo bíblico/livre, ficha técnica, prompt, letra, bypass, LANDR, checklist
+- **FCE.md** — menu opção 13 (Criar música para Suno)
+- **launcher/README.md** — entrada 13
+- **AGENTS.md** — ordem de leitura inclui `library/suno/`; papel Suno via VibeShell; glossário (VibeShell, Verificação Teológica Estrita, Regra da Alma)
+- **WORKFLOW.md** — WF2 Fase C aponta para VibeShell + LANDR
+- **PROJECT_STRUCTURE.md** — módulo `library/suno/` + árvore atualizada
+- Manuais VibeShell V1/V2/V3.0 da raiz consolidados como fonte histórica
+
 ### Adicionado — FCE Launcher (interface conversacional)
 - **FCE.md** — porta de entrada: menu 12 opções + regras universais
 - **launcher/** — 11 playbooks de tarefa:

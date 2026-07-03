@@ -82,16 +82,19 @@ Pipelines de produção ponta a ponta. Cada workflow indica **ferramenta princip
 **Padrão de dinâmica FCE:**
 - Intro íntima → beat entra → pre-chorus tension → **chorus explosion** → verse 2 → repeat → bridge breakdown → outro epic
 
-### Fase C — Ficha técnica e Suno
+### Fase C — Ficha técnica e Suno (método VibeShell)
+
+**Método:** [library/suno/](./library/suno/) · **Launcher:** [CREATE_SUNO_SONG.md](./launcher/CREATE_SUNO_SONG.md)
 
 | Etapa | Ação | Ferramenta |
 |-------|------|------------|
-| C1 | Preencher vibe, tempo, ministração | Cursor |
-| C2 | Escrever Suno prompt (inglês) | ChatGPT |
+| C0 | Definir escopo (bíblico → Verificação Teológica Estrita) | VibeShell Fase 1 |
+| C1 | Preencher vibe, tempo, ministração (Ficha Técnica) | Cursor |
+| C2 | Escrever Suno prompt (inglês + `Brazilian Portuguese vocals`, Regra da Alma) | ChatGPT |
 | C3 | Colar letra tagged no Suno | Suno |
 | C4 | Iterar 3–10 gerações | Suno |
 | C5 | Documentar melhor take + ajustes desejados | Humano → `suno/iterations/notes.md` |
-| C6 | Export WAV/MP3 master | Suno + pós opcional |
+| C6 | Export WAV/MP3 master + perfil LANDR | Suno + LANDR ([mastering-landr.md](./library/suno/mastering-landr.md)) |
 
 **Output:** `technical-sheet.md`, `suno/prompt.txt`, `assets/audio/`
 
@@ -561,6 +564,7 @@ Hook → Character → Scene(s) → Emotion → Symbol → Cinematography → Pr
 |--------|----------|----------------|
 | Letra nova | WF2 Fase A–B | 2–4 h |
 | Suno prompt | WF2 Fase C1–C2 | 30 min |
+| Música Suno (completa) | FCE Launcher § CREATE_SUNO_SONG | 30–60 min |
 | Reel de lançamento | WF3 + WF5 ou WF9 | 4–8 h |
 | Campanha completa | CDS + WF7 | 2–4 h |
 | CDS — brief estratégico | Creative Direction CDS1 | 1–2 h |

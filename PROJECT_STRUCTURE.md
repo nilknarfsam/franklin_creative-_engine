@@ -327,6 +327,27 @@ Arquivos `.md` com placeholders `{{VAR}}` ou seções `[PREENCHER]`.
 
 ---
 
+## Módulo: Suno Music System / VibeShell (`library/suno/`)
+
+**Sistema oficial de produção musical.** Consolida o método VibeShell (V1→V3.0) — não gera áudio; orienta prompt Suno + letra definitiva.
+
+| Arquivo | Função |
+|---------|--------|
+| `README.md` | Índice e propósito do módulo |
+| `vibeshell-method.md` | Método completo — 6 fases (base V3.0) |
+| `suno-prompt-rules.md` | Sintaxe de controle (colchetes, parênteses, pontuação) |
+| `lyrics-structure.md` | Dinâmica, Super Edição, humanização |
+| `bypass-and-safety.md` | Travas: sotaque, copyright lírico, Regra da Alma |
+| `mastering-landr.md` | Perfis de masterização LANDR |
+
+**Regra FCE:** Projetos bíblicos ativam **Verificação Teológica Estrita**. Prompt sempre termina em `Brazilian Portuguese vocals`. Nunca nomear bandas reais.
+
+**Launcher:** [launcher/CREATE_SUNO_SONG.md](../launcher/CREATE_SUNO_SONG.md) · **Output por faixa:** `tracks/.../lyrics.md` + `suno/prompt.txt`
+
+**Fonte histórica:** manuais VibeShell na raiz (consolidados — não canônicos).
+
+---
+
 ## Módulo: Creative Direction System (`library/creative_direction_system/`)
 
 **Framework permanente de direção criativa estratégica.** Não gera imagens nem vídeos — define como uma campanha deve ser pensada antes da execução.
@@ -349,12 +370,18 @@ Conteúdo **curado e versionado**, não rascunhos de projeto.
 
 ```
 library/
-├── suno/
-│   ├── vibes/
+├── suno/                        # Suno Music System / VibeShell (método oficial)
+│   ├── README.md
+│   ├── vibeshell-method.md
+│   ├── suno-prompt-rules.md
+│   ├── lyrics-structure.md
+│   ├── bypass-and-safety.md
+│   ├── mastering-landr.md
+│   ├── vibes/                   # (futuro) vibes curadas por gênero
 │   │   ├── dark-trap.md
 │   │   ├── arena-rock.md
 │   │   └── festive-trap-pop.md
-│   └── vocal-tags.md
+│   └── vocal-tags.md            # (futuro)
 ├── veo3/
 │   ├── prompt-rules.md
 │   ├── camera-moves.md

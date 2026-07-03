@@ -32,6 +32,7 @@ Cada arquivo desta pasta é um **playbook conversacional** para IAs (ChatGPT, Cu
 | [CREATE_TRACK.md](./CREATE_TRACK.md) | Nova faixa | 10 |
 | [CREATE_ALBUM.md](./CREATE_ALBUM.md) | Novo álbum | 11 |
 | [IMPROVE_SYSTEM.md](./IMPROVE_SYSTEM.md) | Melhorar documentação FCE | 12 |
+| [CREATE_SUNO_SONG.md](./CREATE_SUNO_SONG.md) | Música para Suno (VibeShell) | 13 |
 
 **Campanha completa (menu 9):** não tem launcher único — orquestra CDS + [WORKFLOW.md § WF7](../WORKFLOW.md#workflow-7--campanha-de-lançamento) + launchers individuais.
 

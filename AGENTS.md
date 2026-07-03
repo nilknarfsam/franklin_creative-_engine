@@ -31,8 +31,9 @@ Leia este arquivo **por completo** antes de gerar, editar ou reorganizar conteú
 5. **docs/PRODUCTION_PHILOSOPHY.md** — se a tarefa envolver **produção visual ou campanha**
 6. **`library/creative_direction_system/`** — se a tarefa envolver **campanha, design ou direção criativa**
 7. **`library/narrative_engine/`** — se a tarefa envolver **qualquer vídeo**
-8. **album.yaml** / **track.yaml** do contexto específico
-9. **legal/dossie-direitos-autorais.md** se trabalhar com letras existentes
+8. **`library/suno/`** — se a tarefa envolver **música/letra/prompt Suno** (método VibeShell)
+9. **album.yaml** / **track.yaml** do contexto específico
+10. **legal/dossie-direitos-autorais.md** se trabalhar com letras existentes
 
 ---
 
@@ -138,13 +139,18 @@ Não invente faixas fora do Álbum 4 sem autorização.
 
 ### Suno (via humano ou prompt exportado)
 
+**Pré-requisito:** método **VibeShell** — [library/suno/](./library/suno/) + [launcher/CREATE_SUNO_SONG.md](./launcher/CREATE_SUNO_SONG.md)
+
 **Input esperado:** `lyrics.md` + `suno/prompt.txt`
 
 **Regras:**
-- Letra com tags de seção na linha ou bloco
-- Prompt descreve instrumentação, dinâmica, vocal style
+- Seguir o método VibeShell (6 fases) para prompt + letra
+- Projeto bíblico → **Verificação Teológica Estrita** (VibeCore Alert se dúvida)
+- Letra com tags de seção · 1ª linha `[Language: Brazilian Portuguese]`
+- Prompt descreve instrumentação, dinâmica, vocal style — **nunca** nomes de bandas reais (Regra da Alma)
 - Sempre incluir `Brazilian Portuguese vocals`
-- Documentar iterações em `suno/iterations/notes.md`
+- Aplicar bypass lírico em textos de domínio público (métrica + teologia preservadas)
+- Documentar iterações em `suno/iterations/notes.md` · perfil LANDR na masterização
 
 ### Veo 3 / Veo API
 
@@ -369,6 +375,9 @@ updated: 2026-07-02
 | **CDS** | Creative Direction System — brief, spec e review estratégicos |
 | **Hero Asset** | Primeira peça visual da campanha; origem de derivação |
 | **FCE Launcher** | Interface conversacional — FCE.md + launcher/ |
+| **VibeShell** | Método de produção musical Suno — `library/suno/` |
+| **Verificação Teológica Estrita** | Trava de fidelidade bíblica ativada em projetos cristãos |
+| **Regra da Alma** | Descrever a alma sonora em inglês, nunca nomear bandas reais |
 | **Asset Derivation** | Produção de post, carrossel, story e thumb a partir do Hero |
 | **Ministração** | Momento falado/oração dentro da faixa |
 

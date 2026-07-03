@@ -91,6 +91,7 @@ Cada launcher lista paths, perguntas ao usuário, saídas esperadas e o que **n�
 | 10 | Criar nova faixa | [launcher/CREATE_TRACK.md](./launcher/CREATE_TRACK.md) |
 | 11 | Criar novo álbum | [launcher/CREATE_ALBUM.md](./launcher/CREATE_ALBUM.md) |
 | 12 | Melhorar o sistema FCE | [launcher/IMPROVE_SYSTEM.md](./launcher/IMPROVE_SYSTEM.md) |
+| 13 | Criar música para Suno | [launcher/CREATE_SUNO_SONG.md](./launcher/CREATE_SUNO_SONG.md) |
 
 ### Nota — Opção 9 (Campanha completa)
 
@@ -134,7 +135,7 @@ Após ler este arquivo, diga:
 
 > **O que você deseja produzir hoje?**
 >
-> 1. Post Instagram · 2. Carrossel · 3. Hero Asset · 4. Story · 5. Reel · 6. Shorts · 7. Prompt Veo · 8. Legenda · 9. Campanha completa · 10. Nova faixa · 11. Novo álbum · 12. Melhorar o FCE
+> 1. Post Instagram · 2. Carrossel · 3. Hero Asset · 4. Story · 5. Reel · 6. Shorts · 7. Prompt Veo · 8. Legenda · 9. Campanha completa · 10. Nova faixa · 11. Novo álbum · 12. Melhorar o FCE · 13. Música para Suno
 >
 > Digite o número ou descreva a tarefa.
 
