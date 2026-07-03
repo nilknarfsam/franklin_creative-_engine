@@ -3,7 +3,7 @@
 **Álbum:** [O Trono Intocável](../../concept.md)  
 **Referência:** Salmo 37 (Sl 37)  
 **Vibe:** Trap Acústico & Pop Teatral  
-**Status:** `lyrics_final` · Narrative Engine completo · Identity v1.0
+**Status:** `lyrics_final` · Narrative Engine ✅ · Identity ✅ · **CDS G1+G2 ✅**
 
 ---
 
@@ -56,9 +56,10 @@ Aplica-se a: carrosséis, posts, stories, reels, shorts, thumbnails, Spotify Can
 | Recurso | Path | Status |
 |---------|------|--------|
 | Track identity | [identity/track_identity.md](./identity/track_identity.md) | ✅ v1.0 |
-| Canva brief | [design/canva-brief.md](./design/canva-brief.md) | Pendente |
-| Creative brief (CDS) | `design/creative-brief.md` | Pendente |
-| Design spec (CDS) | `design/design-specification.md` | Pendente |
+| **Creative brief (CDS)** | [design/creative-brief.md](./design/creative-brief.md) | ✅ G1 approved |
+| **Design spec (CDS)** | [design/design-specification.md](./design/design-specification.md) | ✅ G2 approved |
+| **Creative review (CDS)** | [design/creative-review.md](./design/creative-review.md) | ✅ G1+G2 · G4 pending |
+| Canva brief | [design/canva-brief.md](./design/canva-brief.md) | 🔄 Pronto para execução |
 | Campanha | `../../campaigns/campaign-track-01/` | Pendente |
 | Estudo bíblico | `../../bible-studies/study-track-01-salmo-37/` | Pendente |
 

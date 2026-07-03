@@ -12,6 +12,7 @@ Uma "Super Edição" focando na confiança inabalável em Deus contra a ansiedad
 
 - [README da faixa](./README.md) — entrada e índice
 - [Identidade visual](./identity/track_identity.md) — linguagem visual permanente (Sprint 5.1)
+- [CDS — creative brief](./design/creative-brief.md) · [design spec](./design/design-specification.md) · [review](./design/creative-review.md)
 - [Letra definitiva](./lyrics.md)
 - [Ficha técnica](./technical-sheet.md)
 - [Suno prompt](./suno/prompt.txt)

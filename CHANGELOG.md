@@ -17,7 +17,19 @@ Versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/) para a
 - Implementação scripts `scripts/video/generate_*.py` (Veo API)
 - Primeiras gerações Suno e assets de áudio/vídeo
 - Retrofit Narrative Engine para tracks 02–12
-- Retrofit CDS para tracks existentes com campanha planejada
+- Retrofit CDS para tracks 02–12
+
+### Adicionado — Track 01 CDS + assets P0 (produção Canva)
+- **Track 01 — Creative Direction System aplicado** (`design/`):
+  - `creative-brief.md` — brief estratégico 14 seções (Gate G1 approved)
+  - `design-specification.md` — sistema visual 14 elementos + outline carrossel (Gate G2 approved)
+  - `creative-review.md` — checklists G1+G2 aprovados; G4/G5 pendentes assets
+  - `canva-brief.md` — atualizado para execução P0
+- **Track 01 — Pacote produção visual P0** (`design/`):
+  - `assets-p0-plan.md` — inventário post 4:5, carrossel, story, thumbnail
+  - `carousel-production.md` — 6 slides devocionais spec Canva
+  - `story-production.md` — 3 frames teaser 9:16
+  - `thumbnail-production.md` — YouTube 1280×720
 
 ### Adicionado — Sprint 5.1: Track Identity (O Legado)
 - **Track 01 — Identidade visual permanente** (`tracks/track-01-o-legado/identity/`):
